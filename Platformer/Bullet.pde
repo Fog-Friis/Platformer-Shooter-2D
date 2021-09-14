@@ -11,20 +11,21 @@ class Bullet {
     this.radius = radius;
     this.direction = direction;
     this.angle = angle;
-    velocity = new PVector(direction*cos(angle)*5, sin(angle)*5);
+    velocity = new PVector(cos(angle)*10, sin(angle)*10);
   }
 
   void update() {
-    position.add(velocity);
-
     if (velocity.x == 0 && velocity.y == 0 || position.x > width || position.x < 0) {
       hasHit = false;
     }
+    
+    position.add(velocity);
   }
 
   void display() {
     pushMatrix();
     translate(position.x, position.y);
+    fill(255, 0,0);
     ellipse(0, 0, radius, radius);
     popMatrix();
   }
