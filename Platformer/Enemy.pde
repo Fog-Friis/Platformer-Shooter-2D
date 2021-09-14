@@ -1,12 +1,6 @@
 PVector position;
+Enemy enemies;
 
-void setup(){
-  size(1280,720);
-}
-
-void draw(){
-background(255);  
-}
 class Enemy {
 float positionX, positionY, radius;
 PVector position;
@@ -19,13 +13,11 @@ ArrayList<Enemy> enemy;
 char rightButton;
   
 
-Enemy(PVector position, PVector velocity, PVector acceleration,PVector gravity, float speed, char rightButton) {
+Enemy(PVector position, PVector velocity, float speed) {
  this.position = position;
   this.velocity = velocity;
-  this.acceleration = acceleration;
-  this.gravity = gravity;
   this.enemySpeed = enemySpeed;
- this.rightButton = rightButton;
+
 
 enemy = new ArrayList<Enemy>();
   
@@ -45,12 +37,13 @@ void display() {
 }
 
 void tracker(){
-
-  if (dist(enemy.Enemy.position.x, enemy.position.y, player.position.x,player.position.y)<50){
+for (Enemy e : enemies) {
+  if (dist(e.position.x, e.position.y, player.position.x,player.position.y)<50){
        println("Thor er gud");
 //if (dist(enemy.position.x, enemy.position.y, player.position.x,player.position.y)<50){
  //Move towards player
 }
+  }
 
 }
 /*void spawner() {
