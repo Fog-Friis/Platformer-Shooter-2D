@@ -1,3 +1,4 @@
+PVector position;
 
 void setup(){
   size(1280,720);
@@ -6,8 +7,9 @@ void setup(){
 void draw(){
 background(255);  
 }
-class enemy {
+class Enemy {
 float positionX, positionY, radius;
+PVector position;
 PVector velocity;
 PVector acceleration = new PVector();
 PVector gravity = new PVector (0,0);
@@ -15,10 +17,10 @@ float enemySpeed;
 int rTracker = 50;
 ArrayList<Enemy> enemy;
 char rightButton;
-
-
-enemy(float positionX,float positionY,float radius, PVector velocity, PVector acceleration,PVector gravity, float speed, char rightButton) {
   
+
+Enemy(PVector position, PVector velocity, PVector acceleration,PVector gravity, float speed, char rightButton) {
+ this.position = position;
   this.velocity = velocity;
   this.acceleration = acceleration;
   this.gravity = gravity;
@@ -26,12 +28,15 @@ enemy(float positionX,float positionY,float radius, PVector velocity, PVector ac
  this.rightButton = rightButton;
 
 enemy = new ArrayList<Enemy>();
-
   
+ 
   }
 }
+
 void update() {
+
 tracker(); //leder efter player 
+
 //spawner();
 //life();
 }
@@ -40,15 +45,17 @@ void display() {
 }
 
 void tracker(){
-  println("din far");
-/*if (dist(enemy.position.x,enemy.postion.y, player.position.x,player.position.y)<rTracker){
+
+  if (dist(enemy.Enemy.position.x, enemy.position.y, player.position.x,player.position.y)<50){
+       println("Thor er gud");
+//if (dist(enemy.position.x, enemy.position.y, player.position.x,player.position.y)<50){
  //Move towards player
-}*/
- 
+}
+
 }
 /*void spawner() {
   //
- if (keyPressed && key == rightButton){
+ if (keyPressed && key == 'd'){
    pushMatrix();
   //enemy.add(new enemy(new PVector(300,700));
   println("din far");
@@ -72,5 +79,5 @@ void life() {
 void run() {
     update();
     display();
-    
+   
   }
