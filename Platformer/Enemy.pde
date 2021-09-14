@@ -1,12 +1,5 @@
 
-void setup(){
-  size(1280,720);
-}
-
-void draw(){
-background(255);  
-}
-class enemy {
+class Enemy {
 float positionX, positionY, radius;
 PVector velocity;
 PVector acceleration = new PVector();
@@ -17,7 +10,7 @@ ArrayList<Enemy> enemy;
 char rightButton;
 
 
-enemy(float positionX,float positionY,float radius, PVector velocity, PVector acceleration,PVector gravity, float speed, char rightButton) {
+Enemy(float positionX,float positionY,float radius, PVector velocity, PVector acceleration,PVector gravity, float speed, char rightButton) {
   
   this.velocity = velocity;
   this.acceleration = acceleration;

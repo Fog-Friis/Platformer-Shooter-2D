@@ -6,15 +6,22 @@ void setup() {
 }
 
 void keyPressed() {
-  player.registerPress();
+  player.keyPress();
 }
 
 void keyReleased() {
-  player.registerRelease();
+  player.keyRelease();
+}
+
+void mousePressed() {
+  player.mousePress();
+}
+
+void mouseReleased() {
+  player.mouseRelease();
 }
 
 void draw() {
   background(255);
   player.run();
-
 }
