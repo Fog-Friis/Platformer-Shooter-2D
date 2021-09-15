@@ -48,5 +48,6 @@ void draw() {
   ps1.run();
   ps2.run();
   
+  fill(255, 215, 0);
   text(totalcoins+" coins",width-300,50);
 }
