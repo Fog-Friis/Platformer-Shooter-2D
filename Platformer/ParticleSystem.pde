@@ -1,5 +1,8 @@
 int pmin = 5;
 int pmax = 20;
+float fcoins;
+int coins;
+int totalcoins = 0;
 ParticleSystem ps1, ps2;
 //lav particlesysten
 /*
@@ -23,9 +26,12 @@ class ParticleSystem {
   }
 
   void addParticle() {
-    for (int i = 0; i < random(pmin,pmax); i++) {
-    particles.add(new Particle(origin));
+
+    for (int i = 0; i < fcoins; i++) {
+        
+        particles.add(new Particle(origin));
     }
+
   }
 
   void run() {

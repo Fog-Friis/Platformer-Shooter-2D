@@ -8,9 +8,12 @@ class EnemyHandler {
       Enemy e = enemies.get(i);
       e.run();
       if (e.health <= 0) {
+        fcoins = random(pmin,pmax);
+       int coins = (int) fcoins;
           ps2 = new ParticleSystem(new PVector(e.position.x,e.position.y));
         enemies.remove(i);
         ps2.addParticle();
+        totalcoins = totalcoins+coins;
       }
     }
   }

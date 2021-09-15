@@ -16,7 +16,7 @@ void setup() {
     ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
     //ps2 er til enemy
     ps2 = new ParticleSystem(new PVector(player.position.x,player.position.y));
-
+  textSize(50);
   lifeManager = new LifeManager();
 
 }
@@ -47,4 +47,6 @@ void draw() {
   platformHandler.update();
   ps1.run();
   ps2.run();
+  
+  text(totalcoins+" coins",width-300,50);
 }
