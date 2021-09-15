@@ -93,9 +93,16 @@ class Player {
       Bullet b = bullets.get(i);
       b.run();
       //c.velocity = new PVector(cos(angle)*5, sin(angle*5));
-      if (b.isDead() /*|| gameState != 1*/) {
+      if (b.isDead()) {
         bullets.remove(i);
-        //println("removed ball");
+      }
+
+      for (Enemy e : enemies) {
+
+        if (dist(b.position.x, b.position.y, e.position.x, e.position.y)<49) {
+          bullets.remove(i);
+          e.health -= 10;
+        }
       }
     }
 

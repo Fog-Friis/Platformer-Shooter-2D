@@ -36,6 +36,7 @@ class Bullet {
     } else {
       return false;
     }
+    
   }
 
   void run() {
