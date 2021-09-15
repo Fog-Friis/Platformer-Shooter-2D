@@ -8,14 +8,13 @@ void setup() {
   player = new Player(new PVector(width/2, height/2), 10, 1, 1);
   enemyHandler = new EnemyHandler();
   enemyHandler.setupEnemies();
-<<<<<<< Updated upstream
     //ps1 er til player 
     ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
     //ps2 er til enemy
     ps2 = new ParticleSystem(new PVector(player.position.x,player.position.y));
-=======
+
   lifeManager = new LifeManager();
->>>>>>> Stashed changes
+
 }
 
 void keyPressed() {
