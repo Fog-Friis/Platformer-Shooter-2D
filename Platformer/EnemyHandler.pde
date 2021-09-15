@@ -8,6 +8,8 @@ class EnemyHandler {
       Enemy e = enemies.get(i);
       e.run();
       if (e.health <= 0) {
+          ps2 = new ParticleSystem(new PVector(e.position.x,e.position.y));
+          ps2.addParticle();
         enemies.remove(i);
       }
     }

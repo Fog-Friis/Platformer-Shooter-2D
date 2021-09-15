@@ -4,11 +4,11 @@ ParticleSystem ps1, ps2;
 //lav particlesysten
 /*
 //add on setup
-  ps1 = new ParticleSystem(new PVector(???.position.x,???.position.y));
-  ps2 = new ParticleSystem(new PVector(???.position.x,???.position.y));
+  ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
+  ps2 = new ParticleSystem(new PVector(player.position.x,player.position.y));
 
 //Add on hitdetect
-ps1 = new ParticleSystem(new PVector(???.position.x,???.position.y));
+ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
         ps1.addParticle();
         
 */

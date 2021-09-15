@@ -20,7 +20,7 @@ class Particle {
   void update() {
     velocity.add(acceleration);
     position.add(velocity);
-    lifespan -= 5.0;
+    lifespan -= 2.0;
   }
 
   // Method til display
@@ -28,7 +28,7 @@ class Particle {
     stroke(0, lifespan);
     strokeWeight(2);
     fill(255, 0, 0, lifespan); //RGB code og synlighed
-    ellipse(position.x, position.y, 150, 150);
+    ellipse(position.x, position.y, 20, 20);
   }
 
   //Fjerner døde partikler
