@@ -5,7 +5,7 @@ void setup() {
   player = new Player(new PVector(width/2, height/2), 10, 1, 1);
   ArrayList<Enemy> enemy;
   for (int i = 0; i <10; i++){
-  enemy.add(new Enemy());
+  //enemy.add(new Enemy());
   }
 }
 

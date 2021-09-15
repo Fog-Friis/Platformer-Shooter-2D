@@ -37,11 +37,11 @@ void display() {
 
 void tracker(){
 
-  if (dist(e.position.x, e.position.y, player.position.x,player.position.y)<50){
-       println("test");
+ // if (dist(e.position.x, e.position.y, player.position.x,player.position.y)<50){
+   //    println("test");
 //if (dist(enemy.position.x, enemy.position.y, player.position.x,player.position.y)<50){
  //Move towards player
-}
+//}
 
 }
 /*void spawner() {
@@ -71,8 +71,8 @@ void run() {
     update();
     display();
     
-    for (Enemy e: enemy){
+ /*   for (Enemy e: enemy){
       e.update();
       e.display();
-  }
+  }*/
 }
