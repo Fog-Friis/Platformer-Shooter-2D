@@ -4,7 +4,6 @@ ParticleSystem ps1, ps2;
 //lav particlesysten
 /*
 //add on setup
-<<<<<<< Updated upstream
   ps1 = new ParticleSystem(new PVector(???.position.x,???.position.y));
   ps2 = new ParticleSystem(new PVector(???.position.x,???.position.y));
 
@@ -13,16 +12,6 @@ ps1 = new ParticleSystem(new PVector(???.position.x,???.position.y));
         ps1.addParticle();
         
 */
-=======
- ps1 = new ParticleSystem(new PVector(canon2.position.x,canon2.position.y));
- ps2 = new ParticleSystem(new PVector(canon1.position.x,canon1.position.y));
- 
- //Add on hitdetect
- ps1 = new ParticleSystem(new PVector(???.position.x,???.position.y));
- ps1.addParticle();
- 
- */
->>>>>>> Stashed changes
 
 class ParticleSystem {
   ArrayList<Particle> particles;
