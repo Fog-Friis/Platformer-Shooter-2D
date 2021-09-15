@@ -19,6 +19,9 @@ class PlatformHandler {
         player.velocity.y = 0;
         player.position.y = p.position.y + 40;
         player.grounded = false;
+      } else if (player.position.y <= 25){
+        player.velocity.y = 0;
+        player.position.y = 25;
       }
     }
   }

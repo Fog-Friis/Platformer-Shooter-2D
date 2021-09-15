@@ -107,8 +107,18 @@ class Player {
     }
 
     theta = atan2(position.y-mouseY, position.x-mouseX) + PI;
-
+    
     move();
+    
+    println(position.x);
+    if(position.x == 25 || position.x < 25){
+      velocity.x = 0;
+      position.x = 25;
+    }
+    if(position.x >= width - 25){
+      velocity.x = 0;
+      position.x = width - 25;
+    }
     
     if (grounded){
       gravity.y = 0;
