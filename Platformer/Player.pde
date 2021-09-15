@@ -130,10 +130,11 @@ class Player {
     pushMatrix();
     translate(position.x, position.y);
     fill(0, 0, 255);
+    rectMode(CENTER);
+        
     rect(0, 0, 50, 50);
 
     rotate(theta);
-    rectMode(CENTER);
     fill(0, 0, 100);
     rect(0, 0, 70, 10);
 
