@@ -39,4 +39,6 @@ void draw() {
   lifeManager.run();
   player.run();
   enemyHandler.update();
+  ps1.run();
+  ps2.run();
 }

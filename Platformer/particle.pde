@@ -6,7 +6,7 @@ class Particle {
 
   Particle(PVector l) {
     acceleration = new PVector(0, 0.05);
-    velocity = new PVector(random(-1, 1), random(-2, 0));
+    velocity = new PVector(random(-10, 10), random(-10, 0));
     position = l.get();
     lifespan = 255.0;
   }
@@ -20,7 +20,7 @@ class Particle {
   void update() {
     velocity.add(acceleration);
     position.add(velocity);
-    lifespan -= 2.0;
+    lifespan -= 10.0;
   }
 
   // Method til display
