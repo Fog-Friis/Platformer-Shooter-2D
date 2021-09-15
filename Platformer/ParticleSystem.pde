@@ -1,4 +1,5 @@
-int nparticle = 5; 
+int pmin = 1;
+int pmax = 10;
 ParticleSystem ps1, ps2;
 //lav particlesysten
 /*
@@ -22,7 +23,7 @@ class ParticleSystem {
   }
 
   void addParticle() {
-    for (int i = 0; i < nparticle; i++) {
+    for (int i = 0; i < random(pmin,pmax); i++) {
     particles.add(new Particle(origin));
     }
   }
