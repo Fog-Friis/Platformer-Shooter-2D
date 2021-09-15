@@ -10,6 +10,7 @@ class LifeManager {
     for (Enemy e : enemies) { 
       if (frameCount >= nextAttackTime) {
         if (dist(player.position.x, player.position.y, e.position.x, e.position.y)<e.size/2+25) {
+          e.health = 0;
           playerHealth -= 10;
           nextAttackTime += attackRate;
         }

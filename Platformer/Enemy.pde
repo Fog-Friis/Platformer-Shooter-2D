@@ -3,7 +3,7 @@
 class Enemy {
   PVector position;
   PVector velocity;
-  float size;
+  float size, theta;
   PVector acceleration = new PVector();
   PVector gravity = new PVector (0, 0);
   float enemySpeed, health;
@@ -19,16 +19,19 @@ class Enemy {
     this.health = health;
     //this.rightButton = rightButton;
   }
-
-
+  
+  void applyForce(PVector force){
+    acceleration.add(force);
+  }
 
   void update() {    
     //takeDamage();
-    //tracker(); //leder efter player 
-
-
-    //spawner();
-    //life();
+    tracker(); //leder efter player 
+    
+    position.add(velocity);
+    velocity.add(acceleration);
+    applyForce(gravity);
+    acceleration.mult(0);
   }
 
   void display() {
@@ -40,12 +43,8 @@ class Enemy {
   }
 
   void tracker() {
-
-    // if (dist(e.position.x, e.position.y, player.position.x,player.position.y)<50){
-    //    println("test");
-    //if (dist(enemy.position.x, enemy.position.y, player.position.x,player.position.y)<50){
-    //Move towards player
-    //}
+    theta = atan2(position.y-player.position.y, position.x-player.position.x) + PI;
+    velocity = new PVector(cos(theta)*enemySpeed, sin(theta)*enemySpeed);
   }
   /*void spawner() {
    //

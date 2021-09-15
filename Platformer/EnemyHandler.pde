@@ -17,7 +17,7 @@ class EnemyHandler {
 
   void addEnemy() {
     if (key == 'p') {
-      enemies.add(new Enemy(new PVector(random(200,width-200), random(200,height-200)), new PVector(0, 0), new PVector(0, 0), 100, 0, 100));
+      enemies.add(new Enemy(new PVector(random(200,width-200), random(200,height-200)), new PVector(0, 0), new PVector(0, 0), 100, 5, 50));
     }
   }
 }
