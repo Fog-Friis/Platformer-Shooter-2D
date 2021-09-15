@@ -1,3 +1,4 @@
+int nparticle = 5; 
 ParticleSystem ps1, ps2;
 //lav particlesysten
 /*
@@ -21,7 +22,9 @@ class ParticleSystem {
   }
 
   void addParticle() {
-    particles.add(5,new Particle(origin));
+    for (int i = 0; i < nparticle; i++) {
+    particles.add(new Particle(origin));
+    }
   }
 
   void run() {
