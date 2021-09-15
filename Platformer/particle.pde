@@ -27,7 +27,7 @@ class Particle {
   void display() {
     stroke(0, lifespan);
     strokeWeight(2);
-    fill(255, 0, 0, lifespan); //RGB code og synlighed
+    fill(255, 0, 30, lifespan); //RGB code og synlighed
     ellipse(position.x, position.y, 20, 20);
   }
 
