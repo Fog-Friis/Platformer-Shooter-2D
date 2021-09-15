@@ -7,7 +7,7 @@ void setup() {
   player = new Player(new PVector(width/2, height/2), 10, 1, 1);
   enemyHandler = new EnemyHandler();
   enemyHandler.setupEnemies();
-  }
+}
 
 void keyPressed() {
   player.keyPress();

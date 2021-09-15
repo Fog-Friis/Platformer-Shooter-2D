@@ -3,23 +3,24 @@
 class Enemy {
   PVector position;
   PVector velocity;
+  float size;
   PVector acceleration = new PVector();
   PVector gravity = new PVector (0, 0);
   float enemySpeed, health;
   int rTracker = 50;
   char rightButton;
 
-  Enemy(PVector position, PVector velocity, PVector acceleration, PVector gravity, float enemySpeed, float health) {
+  Enemy(PVector position, PVector velocity, PVector gravity, float size, float enemySpeed, float health) {
     this.position = position;
     this.velocity = velocity;
-    this.acceleration = acceleration;
+    this.size = size;
     this.gravity = gravity;
     this.enemySpeed = enemySpeed;
     this.health = health;
     //this.rightButton = rightButton;
   }
 
- 
+
 
   void update() {    
     //takeDamage();
@@ -33,8 +34,8 @@ class Enemy {
   void display() {
     pushMatrix();
     translate(position.x, position.y);
-    
-    rect(0,0, 100, 100);
+    fill(255, 0, 0);
+    rect(0, 0, size, size);
     popMatrix();
   }
 
