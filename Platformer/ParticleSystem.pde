@@ -1,5 +1,5 @@
-int pmin = 1;
-int pmax = 10;
+int pmin = 5;
+int pmax = 20;
 ParticleSystem ps1, ps2;
 //lav particlesysten
 /*

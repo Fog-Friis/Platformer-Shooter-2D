@@ -45,4 +45,6 @@ void draw() {
   player.run();
   enemyHandler.update();
   platformHandler.update();
+  ps1.run();
+  ps2.run();
 }
