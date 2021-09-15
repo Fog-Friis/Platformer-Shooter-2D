@@ -153,8 +153,6 @@ class Player {
     rect(0, 0, 70, 10);
 
     popMatrix();
-    
-    println(grounded);
   }
 
   void run() {

@@ -17,7 +17,6 @@ ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
 */
 
 class ParticleSystem {
-  ArrayList<Particle> particles;
   PVector origin;
 
   ParticleSystem(PVector position) {

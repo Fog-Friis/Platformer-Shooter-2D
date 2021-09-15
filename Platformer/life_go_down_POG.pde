@@ -1,5 +1,3 @@
-float playerHealth = 100;
-
 class LifeManager {
 
   float attackRate = 120f;
@@ -11,7 +9,7 @@ class LifeManager {
       if (frameCount >= nextAttackTime) {
         if (dist(player.position.x, player.position.y, e.position.x, e.position.y)<e.size/2+25) {
           e.health = 0;
-          playerHealth -= 10;
+          player.health -= 10;
           nextAttackTime += attackRate;
         }
       }
@@ -24,7 +22,7 @@ class LifeManager {
     fill(0, 0, 0);
     rect(width/16, height/32, 2*104, 2*14);
     fill(255, 0, 0);
-    rect(width/16+4, height/32+4, 2*playerHealth, 2*10);
+    rect(width/16+4, height/32+4, 2*player.health, 2*10);
     popMatrix();
     //text(str(playerHealth), width/16, height/32, 9999, 9999);
   }
