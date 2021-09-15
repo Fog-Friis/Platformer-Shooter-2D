@@ -109,8 +109,14 @@ class Player {
     theta = atan2(position.y-mouseY, position.x-mouseX) + PI;
 
     move();
+    
+    if (grounded){
+      gravity.y = 0;
+    } else {
+      gravity.y = 2;
+    }
 
-    if (!grounded) applyForce(gravity);
+    applyForce(gravity);
 
     velocity.x = velocity.x + dir*speed*sprintSpeed;
     velocity.add(acceleration);
@@ -147,6 +153,8 @@ class Player {
     rect(0, 0, 70, 10);
 
     popMatrix();
+    
+    println(grounded);
   }
 
   void run() {
