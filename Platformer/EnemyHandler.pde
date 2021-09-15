@@ -12,10 +12,10 @@ class EnemyHandler {
       }
     }
   }
-  
-  void addEnemy(){
-    if(key == 'p'){
-      enemies.add(new Enemy(new PVector(width/2, height/2), new PVector(0, 0), new PVector(0, 0), new PVector(0, 0), 0, 100));
+
+  void addEnemy() {
+    if (key == 'p') {
+      enemies.add(new Enemy(new PVector(width/2, height/2), new PVector(0, 0), new PVector(0, 0), 100, 0, 100));
     }
   }
 }

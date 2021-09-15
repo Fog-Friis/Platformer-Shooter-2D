@@ -99,7 +99,7 @@ class Player {
 
       for (Enemy e : enemies) {
 
-        if (dist(b.position.x, b.position.y, e.position.x, e.position.y)<49) {
+        if (dist(b.position.x, b.position.y, e.position.x, e.position.y)<e.size/2) {
           bullets.remove(i);
           e.health -= 10;
         }
@@ -129,11 +129,12 @@ class Player {
   void display() {
     pushMatrix();
     translate(position.x, position.y);
-
+    fill(0, 0, 255);
     rect(0, 0, 50, 50);
 
     rotate(theta);
     rectMode(CENTER);
+    fill(0, 0, 100);
     rect(0, 0, 70, 10);
 
     popMatrix();
