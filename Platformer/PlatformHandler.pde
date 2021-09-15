@@ -15,6 +15,11 @@ class PlatformHandler {
         player.velocity.y = player.velocity.y*0;
         player.grounded = true;
       }
+      if (p.isOver(player.position)){
+        player.velocity.y = 0;
+        player.position.y = p.position.y + 40;
+        player.grounded = false;
+      }
     }
   }
 
