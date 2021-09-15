@@ -131,11 +131,19 @@ class Player {
     translate(position.x, position.y);
     fill(0, 0, 255);
     rectMode(CENTER);
-        
-    rect(0, 0, 50, 50);
+    ellipseMode(CENTER);
+
+    rect(0, 0, 50, 50, 8, 8, 8, 8);
+
+    fill(200, 200, 200);
+    ellipse(0, 0, 35, 35);
+    fill(0, 0, 255);
+    ellipse(0, 0, 27, 27);
+    fill(0, 0, 100);
+    ellipse(0, 0, 20, 20);
 
     rotate(theta);
-    fill(0, 0, 100);
+    fill(0, 0, 150);
     rect(0, 0, 70, 10);
 
     popMatrix();

@@ -19,7 +19,6 @@ class LifeManager {
   }
 
   void display() {
-    println(playerHealth);
     pushMatrix();
     rectMode(CORNER);
     fill(0, 0, 0);

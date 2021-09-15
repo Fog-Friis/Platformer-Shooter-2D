@@ -37,8 +37,10 @@ class Enemy {
   void display() {
     pushMatrix();
     translate(position.x, position.y);
-    fill(255, 0, 0);
-    rect(0, 0, size, size);
+    fill(3*health+150, 0, 0);
+    println(3*health+150);
+    
+    rect(0, 0, size, size, size / 8, size / 8, size / 8, size / 8);
     popMatrix();
   }
 
