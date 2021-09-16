@@ -1,4 +1,4 @@
-int colorcode=215;
+//int colorcode=215;
 
 class Particle {
   PVector position;
