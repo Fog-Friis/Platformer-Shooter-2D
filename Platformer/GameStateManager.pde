@@ -85,10 +85,10 @@ class GameStateManager {
 
   void setupLevel1() {
     player = new Player(new PVector(width / 10, height - 60), 10, 1, 100);
-    platforms.add(new Platform(new PVector(3*width/4, 3*height/4), width, 30));
-    platforms.add(new Platform(new PVector(width/4, height / 2), width, 30));
-    platforms.add(new Platform(new PVector(3*width/4, height/4), width, 30));
-    checkPoint = new CheckPoint(new PVector(width - 100, 100), 80, 120);
+    platforms.add(new Platform(new PVector(width/4, 3*height/4), width, 30));
+    platforms.add(new Platform(new PVector(3*width/4, height / 2), width, 30));
+    platforms.add(new Platform(new PVector(width/4, height/4), width, 30));
+    checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
   }
 
   void runLevel1() {
@@ -96,7 +96,8 @@ class GameStateManager {
     background(255);
     lifeManager.run();
     player.run();
-    platformHandler.update();    
+    platformHandler.update();  
+    enemyHandler.update();
     ps1.run();
     ps2.run();
     checkPoint.run();

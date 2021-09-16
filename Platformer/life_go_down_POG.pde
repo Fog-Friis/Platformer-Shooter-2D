@@ -20,9 +20,9 @@ class LifeManager {
     pushMatrix();
     rectMode(CORNER);
     fill(0, 0, 0);
-    rect(width/16, height/32, 2*104, 2*14);
+    rect(width - width/2, height/32, 2*104, 2*14);
     fill(255, 0, 0);
-    rect(width/16+4, height/32+4, 2*player.health, 2*10);
+    rect(width - width/2+4, height/32+4, 2*player.health, 2*10);
     popMatrix();
     //text(str(playerHealth), width/16, height/32, 9999, 9999);
   }
