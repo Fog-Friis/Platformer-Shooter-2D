@@ -11,6 +11,7 @@ CheckPoint checkPoint;
 
 void setup() {
   size(1280, 720);
+  background = loadImage("Background.png");
   gameStateManager = new GameStateManager();
   enemyHandler = new EnemyHandler();
   enemyHandler.setupEnemies();
