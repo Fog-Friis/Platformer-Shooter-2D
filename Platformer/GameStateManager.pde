@@ -6,7 +6,7 @@ class GameStateManager {
   }
 
   void manage() {
-    
+
     checkPlayerDeath();
 
     switch(gameState) {
@@ -38,16 +38,29 @@ class GameStateManager {
     text("Main menu", width / 2, height / 2 - 50);
     textSize(30);
     text("press Space to play", width/2, height / 2 );
-    
+
     B1 = new Button(width/1.88, height/1.5, 100, "Lore", color(100, 100, 100));
     if (B1.visible) B1.show();
-    
+
     B2 = new Button(width/1.88, height/1.25, 100, "Controls", color(100, 100, 100));
     if (B2.visible) B2.show();
-    
+
+    for (Enemy e : enemies) {
+      e.health = 0;
+    }
+    for (Particle p : particles) {
+      p.lifespan = -1;
+    }
+
+    for (Bullet b : player.bullets) {
+      b.position.x = -100;
+    }
+
     if (keyPressed && key == ' ') {
       gameState = 2;
     }
+
+    player.health = 100;
   }
 
   void gameOverScreen() {
