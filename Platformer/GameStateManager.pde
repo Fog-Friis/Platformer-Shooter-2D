@@ -78,6 +78,7 @@ class GameStateManager {
   }
 
   void setupLevel1() {
+    
     player = new Player(new PVector(width / 10, height - 50), 10, 1, 100);
     platforms.add(new Platform(new PVector(3*width/4, 3*height/4), width, 30));
     platforms.add(new Platform(new PVector(width/4, height / 2), width, 30));
@@ -85,7 +86,6 @@ class GameStateManager {
   }
 
   void runLevel1() {
-
     image(background,0,0,width,height);
     lifeManager.run();
     player.run();
