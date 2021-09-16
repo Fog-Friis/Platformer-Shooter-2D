@@ -42,6 +42,7 @@ class Button {
   }
 
   void show() {
+    rectMode(CORNER);
     fill(col);
     strokeWeight(3);
     rect(pos.x-sizebutton/1.4, pos.y-sizebutton/7, sizebutton, sizebutton/3);
