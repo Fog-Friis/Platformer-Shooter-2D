@@ -22,6 +22,7 @@ class ParticleSystem {
   ParticleSystem(PVector position) {
     origin = position.get();
     particles = new ArrayList<Particle>();
+    //blood = new ArrayList<Blood>();
   }
 
   void addParticle() {

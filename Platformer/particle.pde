@@ -1,4 +1,4 @@
-int colorcode=215;
+//int colorcode=215;
 
 class Particle {
   PVector position;
@@ -29,7 +29,7 @@ class Particle {
   void display() {
     stroke(0, lifespan);
     strokeWeight(2);
-    fill(255, colorcode, 0  , lifespan); //RGB code og synlighed
+    fill(255, 215, 0  , lifespan); //RGB code og synlighed
     
     ellipse(position.x, position.y, random(3,20),random(3,20));
   }
