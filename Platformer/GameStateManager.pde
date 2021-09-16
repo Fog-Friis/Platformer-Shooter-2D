@@ -44,6 +44,7 @@ class GameStateManager {
     
     B2 = new Button(width/1.88, height/1.25, 100, "Controls", color(100, 100, 100));
     if (B2.visible) B2.show();
+    
     if (keyPressed && key == ' ') {
       gameState = 2;
     }
