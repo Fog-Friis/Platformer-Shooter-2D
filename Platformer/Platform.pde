@@ -10,9 +10,6 @@ class Platform {
     this.pHeight = pHeight;
   }
 
-  void update() {
-  }
-
   boolean isOn(PVector p) {
     if (p.x >= position.x - pLength / 2 - 20 && p.x <= position.x + pLength / 2 + 20 && p.y >= position.y -40 && p.y <= position.y + pHeight / 2) {
       return true;
@@ -40,7 +37,6 @@ class Platform {
   }
 
   void run() {
-    update();
     display();
   }
 }

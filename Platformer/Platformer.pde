@@ -7,9 +7,11 @@ PlatformHandler platformHandler;
 LifeManager lifeManager;
 GameStateManager gameStateManager;
 int gameState = 0;
+CheckPoint checkPoint;
 
 void setup() {
   size(1280, 720);
+  background = loadImage("Background.png");
   gameStateManager = new GameStateManager();
   enemyHandler = new EnemyHandler();
   enemyHandler.setupEnemies();
@@ -55,4 +57,5 @@ void mouseReleased() {
 
 void draw() {
   gameStateManager.manage();
+    //checkPoint.run();
   }
