@@ -6,6 +6,7 @@ class GameStateManager {
   }
 
   void manage() {
+    
     checkPlayerDeath();
 
     switch(gameState) {
@@ -53,7 +54,7 @@ class GameStateManager {
     //textSize(40);
     //text("", width / 2, height / 2 - 50);
     textSize(30);
-    text("press Space to play again", width/2, height / 2 );
+    text("press Space to play again", width/2, height / 2 );    
 
 
     for (Enemy e : enemies) {
@@ -64,7 +65,7 @@ class GameStateManager {
     }
 
     if (keyPressed && key == ' ') {
-      totalcoins = 0;//virker ikke :(
+      totalcoins = 0;
       gameState = 2;
     }
   }
@@ -78,10 +79,11 @@ class GameStateManager {
   }
 
   void setupLevel1() {
-    player = new Player(new PVector(width / 10, height - 50), 10, 1, 100);
+    player = new Player(new PVector(width / 10, height - 60), 10, 1, 100);
     platforms.add(new Platform(new PVector(3*width/4, 3*height/4), width, 30));
     platforms.add(new Platform(new PVector(width/4, height / 2), width, 30));
     platforms.add(new Platform(new PVector(3*width/4, height/4), width, 30));
+    checkPoint = new CheckPoint(new PVector(width - 100, 100), 80, 120);
   }
 
   void runLevel1() {
@@ -89,10 +91,10 @@ class GameStateManager {
     background(255);
     lifeManager.run();
     player.run();
-    enemyHandler.update();
     platformHandler.update();    
     ps1.run();
     ps2.run();
+    checkPoint.run();
 
     fill(255, 215, 0);
     text(totalcoins+" coins", width-300, 50);

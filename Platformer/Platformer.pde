@@ -7,6 +7,7 @@ PlatformHandler platformHandler;
 LifeManager lifeManager;
 GameStateManager gameStateManager;
 int gameState = 0;
+CheckPoint checkPoint;
 
 void setup() {
   size(1280, 720);
@@ -44,4 +45,5 @@ void mouseReleased() {
 
 void draw() {
   gameStateManager.manage();
+    //checkPoint.run();
   }

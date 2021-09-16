@@ -110,7 +110,6 @@ class Player {
     
     move();
     
-    println(position.x);
     if(position.x == 25 || position.x < 25){
       velocity.x = 0;
       position.x = 25;
