@@ -64,7 +64,7 @@ class GameStateManager {
     }
 
     if (keyPressed && key == ' ') {
-      totalcoins = 0;//virker ikke :(
+      totalcoins = 0;
       gameState = 2;
     }
   }
@@ -86,7 +86,7 @@ class GameStateManager {
 
   void runLevel1() {
 
-    background(255);
+    image(background,0,0,width,height);
     lifeManager.run();
     player.run();
     enemyHandler.update();
