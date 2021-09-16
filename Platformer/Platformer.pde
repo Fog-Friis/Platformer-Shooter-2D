@@ -8,10 +8,10 @@ LifeManager lifeManager;
 GameStateManager gameStateManager;
 int gameState = 0;
 CheckPoint checkPoint;
-BackgroundManager backgroundManager;
+//BackgroundManager backgroundManager;
 
 void setup() {
-  size(1280, 720);
+  size(1865, 739);
   background = loadImage("Background.png");
   gameStateManager = new GameStateManager();
   enemyHandler = new EnemyHandler();
@@ -26,7 +26,6 @@ void setup() {
   textSize(50);
   lifeManager = new LifeManager();
   gameStateManager.setManagerUp();
-  backgroundManager = new BackgroundManager();
 }
 
 void keyPressed() {
@@ -59,5 +58,4 @@ void mouseReleased() {
 
 void draw() {
   gameStateManager.manage();
-    //checkPoint.run();
   }

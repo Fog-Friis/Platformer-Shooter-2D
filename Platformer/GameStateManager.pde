@@ -29,7 +29,7 @@ class GameStateManager {
   }
 
   void menuScreen() {
-    background(255);
+    background(background);
     fill(0, 0, 0);
     textSize(50);
     textAlign(CENTER);
@@ -93,7 +93,6 @@ class GameStateManager {
     if (player.health <= 0) {
       player.health = 100;
       gameState = 1;
-      //println("player dead switching gamestate");
     }
   }
 
@@ -107,8 +106,7 @@ class GameStateManager {
 
   void runLevel1() {
 
-    //background(255);
-    backgroundManager.run();
+    background(background);
     lifeManager.run();
     player.run();
     platformHandler.update();  
