@@ -11,8 +11,8 @@ CheckPoint checkPoint;
 //BackgroundManager backgroundManager;
 
 void setup() {
-  size(1865, 739);
-  background = loadImage("Background.png");
+  size(1280, 720);
+  background = loadImage("Background-OG2.png");
   gameStateManager = new GameStateManager();
   enemyHandler = new EnemyHandler();
   enemyHandler.setupEnemies();
