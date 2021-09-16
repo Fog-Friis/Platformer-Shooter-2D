@@ -107,7 +107,8 @@ class GameStateManager {
 
   void runLevel1() {
 
-    background(255);
+    //background(255);
+    backgroundManager.run();
     lifeManager.run();
     player.run();
     platformHandler.update();  

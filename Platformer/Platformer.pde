@@ -8,6 +8,7 @@ LifeManager lifeManager;
 GameStateManager gameStateManager;
 int gameState = 0;
 CheckPoint checkPoint;
+BackgroundManager backgroundManager;
 
 void setup() {
   size(1280, 720);
@@ -25,6 +26,7 @@ void setup() {
   textSize(50);
   lifeManager = new LifeManager();
   gameStateManager.setManagerUp();
+  backgroundManager = new BackgroundManager();
 }
 
 void keyPressed() {
