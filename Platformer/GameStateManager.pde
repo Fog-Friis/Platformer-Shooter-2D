@@ -64,7 +64,7 @@ class GameStateManager {
     }
 
     if (keyPressed && key == ' ') {
-      coins = 0;//virker ikke :(
+      totalcoins = 0;//virker ikke :(
       gameState = 2;
     }
   }
