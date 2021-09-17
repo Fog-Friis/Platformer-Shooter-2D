@@ -81,6 +81,30 @@ class ShooterEnemy {
       if (dist(player.position.x, player.position.y, b.position.x, b.position.y)<35) {
         bullets.remove(i);
         player.health -= 10;
+        fdeathN = random(1,5);
+          fdeathN = fdeathN + 0.5f;
+          deathN  = (int) fdeathN;
+          
+          switch(deathN) { //Virker ikke ordenligt der er et delay
+            case 1:
+          death1.play();
+          break;
+          
+          case 2:
+          death2.play();
+          break;
+          
+          case 3:
+          death3.play();
+          break;
+          
+          case 4:
+          death4.play();
+          break;
+          
+          case 5:
+          death5.play();
+          break;
       }
     }
 
