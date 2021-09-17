@@ -38,7 +38,7 @@ class EnemyHandler {
     }
     
     if (key == 'o'){
-      shooterEnemies.add(new ShooterEnemy(new PVector(random(200, width - 200), random(200, height - 200)), 70.0, 30.0, 300.0, 300.0));
+      shooterEnemies.add(new ShooterEnemy(new PVector(random(200, width - 200), random(200, height - 200)), 70.0, 30.0, 0.0, 10.0));
     }
   }
 }

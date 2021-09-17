@@ -73,7 +73,7 @@ class GameStateManager {
     //textSize(40);
     //text("", width / 2, height / 2 - 50);
     textSize(30);
-    text("press Space to play again", width/2, height / 2 );    
+    text("press Space to play again", width/2, height / 2 );
 
 
     for (Enemy e : enemies) {
@@ -86,6 +86,19 @@ class GameStateManager {
     if (keyPressed && key == ' ') {
       totalcoins = 0;
       gameState = 2;
+    }
+
+    for (Bullet b : player.bullets) {
+      b.position.x = -100;
+    }
+
+    for (ShooterEnemy e : shooterEnemies) {
+
+      e.health = 0;
+
+      for (Bullet b : e.bullets) {
+        b.position.x = -100;
+      }
     }
   }
 
@@ -105,7 +118,6 @@ class GameStateManager {
   }
 
   void runLevel1() {
-
     background(background);
     lifeManager.run();
     player.run();
