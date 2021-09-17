@@ -4,17 +4,7 @@ float fcoins;
 int coins;
 int totalcoins = 0;
 ParticleSystem ps1, ps2;
-//lav particlesysten
-/*
-//add on setup
-  ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
-  ps2 = new ParticleSystem(new PVector(player.position.x,player.position.y));
 
-//Add on hitdetect
-ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
-        ps1.addParticle();
-        
-*/
 
 class ParticleSystem {
   PVector origin;
@@ -22,7 +12,7 @@ class ParticleSystem {
   ParticleSystem(PVector position) {
     origin = position.get();
     particles = new ArrayList<Particle>();
-    //blood = new ArrayList<Blood>();
+    blood = new ArrayList<Blood>();
   }
 
   void addParticle() {
@@ -33,7 +23,12 @@ class ParticleSystem {
     }
 
   }
-
+  void addBlood() {
+  for (int i = 0; i < 10; i++) {
+        
+        blood.add(new Blood(origin));
+    }
+  }
   void run() {
     for (int i = particles.size()-1; i >= 0; i--) {
       Particle p = particles.get(i);
