@@ -29,9 +29,8 @@ class Platform {
   void display() {
     pushMatrix();
     translate(position.x, position.y);
-
-
-    fill(150, 150, 150);
+    stroke(1);
+    fill(165, 155, 130);
     rect(0, 0, pLength, pHeight);
     popMatrix();
   }

@@ -39,10 +39,10 @@ class GameStateManager {
     textSize(30);
     text("press Space to play", width/2, height / 2 );
 
-    B1 = new Button(width/1.88, height/1.5, 100, "Lore", color(100, 100, 100));
+    B1 = new Button(width/1.88, height/1.5, 100, "Lore", color(165, 155, 130));
     if (B1.visible) B1.show();
 
-    B2 = new Button(width/1.88, height/1.25, 100, "Controls", color(100, 100, 100));
+    B2 = new Button(width/1.88, height/1.25, 100, "Controls", color(165, 155, 130));
     if (B2.visible) B2.show();
 
     for (Enemy e : enemies) {

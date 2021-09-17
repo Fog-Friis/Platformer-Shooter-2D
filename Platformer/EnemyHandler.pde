@@ -34,11 +34,11 @@ class EnemyHandler {
 
   void addEnemy() {
     if (key == 'p') {
-      enemies.add(new Enemy(new PVector(random(200, width-200), random(200, height-200)), new PVector(0, 0), new PVector(0, 0), 100, 5, 50));
+      enemies.add(new Enemy(new PVector(random(200, width-200), random(200, height-200)), 100, 7, 50));
     }
     
     if (key == 'o'){
-      shooterEnemies.add(new ShooterEnemy(new PVector(random(200, width - 200), random(200, height - 200)), 70.0, 30.0, 0.0, 10.0));
+      shooterEnemies.add(new ShooterEnemy(new PVector(random(200, width - 200), random(200, height - 200)), 70, 30, 300, 300));
     }
   }
 }
