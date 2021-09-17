@@ -105,6 +105,7 @@ class ShooterEnemy {
           case 5:
           death5.play();
           break;
+          }
       }
     }
 
