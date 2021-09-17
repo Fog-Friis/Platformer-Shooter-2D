@@ -1,5 +1,6 @@
 Player player;
 ArrayList<Enemy> enemies;
+ArrayList<ShooterEnemy> shooterEnemies;
 ArrayList<Platform> platforms;
 ArrayList<Particle> particles;
 EnemyHandler enemyHandler;

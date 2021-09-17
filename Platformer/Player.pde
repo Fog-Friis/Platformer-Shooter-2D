@@ -104,7 +104,19 @@ class Player {
           e.health -= 10;
         }
       }
+      
+      
+      for (ShooterEnemy e : shooterEnemies) {
+
+        if (dist(b.position.x, b.position.y, e.position.x, e.position.y)<e.size/2) {
+          bullets.remove(i);
+          e.health -= 10;
+        }
+      }
+      
     }
+    
+    
 
     theta = atan2(position.y-mouseY, position.x-mouseX) + PI;
     
