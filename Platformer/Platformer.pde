@@ -6,6 +6,7 @@ ArrayList<Enemy> enemies;
 ArrayList<ShooterEnemy> shooterEnemies;
 ArrayList<Platform> platforms;
 ArrayList<Particle> particles;
+ArrayList<Blood> blood;
 EnemyHandler enemyHandler;
 PlatformHandler platformHandler;
 LifeManager lifeManager;

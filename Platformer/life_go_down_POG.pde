@@ -12,16 +12,16 @@ class LifeManager {
       if (frameCount >= nextAttackTime) {
         if (dist(player.position.x, player.position.y, e.position.x, e.position.y)<e.size/2+25) {
           e.health = 0;
-           ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
-           ps1.addBlood();
           player.health -= 10;
           nextAttackTime += attackRate;
-          
+          ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
+         // ps1.addBlood();
           fdeathN = random(1,5);
           fdeathN = fdeathN + 0.5f;
-          int deathN  = (int) fdeathN;
-          switch(deathN) {
-            case 0:
+          deathN  = (int) fdeathN;
+          
+          switch(deathN) { //Virker ikke ordenligt der er et delay
+            case 1:
           death1.play();
           break;
           

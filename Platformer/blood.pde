@@ -5,10 +5,8 @@ class Blood extends Particle {
   }
 
    void display() {
-    stroke(0, lifespan);
-    strokeWeight(2);
     fill(255, 0, 0  , lifespan); //RGB code og synlighed
     
-    ellipse(position.x, position.y, 10,10);
+    ellipse(position.x, position.y, 20,20);
   }
 }
