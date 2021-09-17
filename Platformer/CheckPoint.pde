@@ -31,13 +31,13 @@ class CheckPoint {
     if(isOn(player.position)){
       player.position.x = width / 10;
       player.position.y = height - 50;
-      gameState = 0;
+      gameState += 2;
     }
     
     if(isOver(player.position)){
       player.position.x = width / 10;
       player.position.y = height - 50;
-      gameState = 0;
+      gameState += 2;
     }
     
   }

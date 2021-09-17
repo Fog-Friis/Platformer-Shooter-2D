@@ -57,7 +57,7 @@ class Player {
 
     if (left) {
       dir = -1;
-    } 
+    }
     if (right) {
       dir = 1;
     }
@@ -90,48 +90,47 @@ class Player {
 
   void update() {
     for (int i = bullets.size()-1; i >= 0; i--) {
-      Bullet b = bullets.get(i);
-      b.run();
-      //c.velocity = new PVector(cos(angle)*5, sin(angle*5));
-      if (b.isDead()) {
-        bullets.remove(i);
-      }
-
-      for (Enemy e : enemies) {
-
-        if (dist(b.position.x, b.position.y, e.position.x, e.position.y)<e.size/2) {
+        Bullet b = bullets.get(i);
+        b.run();
+        //c.velocity = new PVector(cos(angle)*5, sin(angle*5));
+        if (b.isDead()) {
           bullets.remove(i);
-          e.health -= 10;
         }
-      }
-      
-      
-      for (ShooterEnemy e : shooterEnemies) {
 
-        if (dist(b.position.x, b.position.y, e.position.x, e.position.y)<e.size/2) {
-          bullets.remove(i);
-          e.health -= 10;
+        for (Enemy e : enemies) {
+
+          if (dist(b.position.x, b.position.y, e.position.x, e.position.y)<e.size/2) {
+            bullets.remove(i);
+            e.health -= 10;
+          }
         }
-      }
-      
+
+
+        for (ShooterEnemy e : shooterEnemies) {
+
+          if (dist(b.position.x, b.position.y, e.position.x, e.position.y)<e.size/2) {
+            bullets.remove(i);
+            e.health -= 10;
+          }
+        }
     }
-    
-    
+
+
 
     theta = atan2(position.y-mouseY, position.x-mouseX) + PI;
-    
+
     move();
-    
-    if(position.x == 25 || position.x < 25){
+
+    if (position.x == 25 || position.x < 25) {
       velocity.x = 0;
       position.x = 25;
     }
-    if(position.x >= width - 25){
+    if (position.x >= width - 25) {
       velocity.x = 0;
       position.x = width - 25;
     }
-    
-    if (grounded){
+
+    if (grounded) {
       gravity.y = 0;
     } else {
       gravity.y = 2;
