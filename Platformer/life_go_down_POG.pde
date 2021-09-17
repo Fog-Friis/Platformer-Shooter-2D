@@ -13,7 +13,7 @@ class LifeManager {
         if (dist(player.position.x, player.position.y, e.position.x, e.position.y)<e.size/2+25) {
           e.health = 0;
            ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
-           ps1.addParticle();
+           ps1.addBlood();
           player.health -= 10;
           nextAttackTime += attackRate;
           

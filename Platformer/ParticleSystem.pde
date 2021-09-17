@@ -33,7 +33,12 @@ class ParticleSystem {
     }
 
   }
-
+  void addBlood() {
+  for (int i = 0; i < 10; i++) {
+        
+        particles.add(new Particle(origin));
+    }
+  }
   void run() {
     for (int i = particles.size()-1; i >= 0; i--) {
       Particle p = particles.get(i);
