@@ -45,6 +45,7 @@ class CheckPoint {
   void display() {
     pushMatrix();
     translate(position.x, position.y);
+    stroke(1);
     fill(0,255,0);
     //rect(0,0,cLength,cHeight);
     quad(-cLength / 2, cHeight / 2 - cHeight / 2, 0, cHeight - cHeight / 2, cLength / 2, cHeight / 2 - cHeight / 2, 0, -cHeight / 2);
