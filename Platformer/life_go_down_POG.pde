@@ -1,3 +1,6 @@
+float fdeathN;
+int deathN;
+
 class LifeManager {
 
   float attackRate = 120f;
@@ -13,6 +16,31 @@ class LifeManager {
            ps1.addParticle();
           player.health -= 10;
           nextAttackTime += attackRate;
+          
+          fdeathN = random(1,5);
+          fdeathN = fdeathN + 0.5f;
+          int deathN  = (int) fdeathN;
+          switch(deathN) {
+            case 0:
+          death1.play();
+          break;
+          
+          case 2:
+          death2.play();
+          break;
+          
+          case 3:
+          death3.play();
+          break;
+          
+          case 4:
+          death4.play();
+          break;
+          
+          case 5:
+          death5.play();
+          break;
+          }
         }
       }
     }

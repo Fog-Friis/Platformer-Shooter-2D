@@ -1,3 +1,6 @@
+import processing.sound.*;
+SoundFile death1,death2,death3,death4,death5;
+
 Player player;
 ArrayList<Enemy> enemies;
 ArrayList<ShooterEnemy> shooterEnemies;
@@ -27,6 +30,11 @@ void setup() {
   textSize(50);
   lifeManager = new LifeManager();
   gameStateManager.setManagerUp();
+  death1 = new SoundFile(this, "Anakin.wav");// Virker ikke med længre lyd filer
+  death2 = new SoundFile(this, "ImperialGuard.wav");
+  death3 = new SoundFile(this, "Lando.wav");
+  death4 = new SoundFile(this, "WilhelmScream.wav");
+  death5 = new SoundFile(this, "YoungAnakin.wav");
 }
 
 void keyPressed() {
