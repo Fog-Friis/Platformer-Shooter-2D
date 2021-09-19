@@ -29,12 +29,14 @@ class CheckPoint {
 
   void update() {
     if(isOn(player.position)){
+      gameStateManager.clearScreen();
       player.position.x = width / 10;
       player.position.y = height - 50;
       gameState += 2;
     }
     
     if(isOver(player.position)){
+      gameStateManager.clearScreen();
       player.position.x = width / 10;
       player.position.y = height - 50;
       gameState += 2;

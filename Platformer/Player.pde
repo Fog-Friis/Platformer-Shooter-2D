@@ -29,14 +29,14 @@ class Player {
     if (key == 'a') left = true;
     if (key == 'd') right = true;
     if (key == ' ') jump = true;
-    if (keyCode == CONTROL) sprint = true;
+    if (keyCode == SHIFT) sprint = true;
   }
 
   void keyRelease() {
     if (key == 'a') left = false;
     if (key == 'd') right = false;
     if (key == ' ') jump = false;
-    if (keyCode == CONTROL) sprint = false;
+    if (keyCode == SHIFT) sprint = false;
   }
 
   void mousePress() {

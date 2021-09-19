@@ -124,11 +124,11 @@ class ShooterEnemy {
     pushMatrix();
     translate(position.x, position.y);
 
-    fill(255, 0, 0);
+    fill(3*health+100, 0, 3*health+100);
     rect(0, 0, size, size, size / 5, size / 5, size / 5, size / 5);
 
     rotate(theta);
-    fill(150, 0, 0);
+    fill(90, 0, 90);
     rect(0, 0, 3*size/2, 10);
 
 
