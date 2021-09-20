@@ -82,7 +82,7 @@ class ShooterEnemy {
         bullets.remove(i);
         player.health -= 10;
         fdeathN = random(1,5);
-          fdeathN = fdeathN + 0.5f;
+          fdeathN += 0.5;
           deathN  = (int) fdeathN;
           
           switch(deathN) { //Virker ikke ordenligt der er et delay

@@ -1,6 +1,7 @@
 //Button class
-
-Button B1,B2,B3,B4,B5,B6,B7,B8,B9;  //cB=circleButton
+float Fcheese;
+int cheese;
+Button But1,But2,But3,But4,But5,But6,But7,But8,But9;  //cB=circleButton
 boolean toggleColor;
 float sizebutton = 200; //radius af kuglen
 
@@ -31,7 +32,7 @@ class Button {
   float radius;
   color col;
   String caption;
-  boolean visible;
+  boolean visible=true;
 
   Button(float x, float y, float r, String txt, color c) {
     pos = new PVector(x, y);
@@ -54,4 +55,73 @@ class Button {
     float ty = pos.y + (fontSize / 2);
     text(caption, tx, ty);
   }
+    void mainMenuB() {    
+    if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.5-sizebutton/7 && mouseY<(height/1.5+sizebutton/3)-sizebutton/7) {   //Ændre hvad height er divideret for fremtide knapper
+      link("https://github.com/Fog-Friis/Platformer-Shooter-2D/wiki/Lore"); //Funktion
+    }
+    if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.25-sizebutton/7 && mouseY<(height/1.25+sizebutton/3)-sizebutton/7) {   
+      link("https://github.com/Fog-Friis/Platformer-Shooter-2D/wiki/Controls"); //Funktion
+      
+    }
+    if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.9-sizebutton/7 && mouseY<(height/1.9+sizebutton/3)-sizebutton/7) {   
+      gameState = 2;
+           
+  }
+   if  (mouseX>width/1.05-sizebutton/1.4 && mouseX<width/1.05+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.05-sizebutton/7 && mouseY<(height/1.05+sizebutton/3)-sizebutton/7) {  
+      Fcheese = random(1, 5);
+      Fcheese += 0.5;
+        cheese = (int) Fcheese;
+        switch(cheese) {
+          case 1:
+          link("https://en.wikipedia.org/wiki/Cheddar_cheese"); //Funktion
+          break;
+      
+          case 2:
+          link("https://en.wikipedia.org/wiki/Mozzarella"); //Funktion
+          break;
+      
+          case 3:
+      link("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"); //Funktion
+      break;
+      
+      case 4:
+      link("https://en.wikipedia.org/wiki/Halloumi"); //Funktion
+      break;
+      
+      case 5:
+      link("https://en.wikipedia.org/wiki/Cheese"); //Funktion
+      break;
+      
+      
+        }
+    }
+ }
+
+  void gameOverB() {
+    if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.5-sizebutton/7 && mouseY<(height/1.5+sizebutton/3)-sizebutton/7) {   //Ændre hvad height er divideret for fremtide knapper
+     gameState = 0; //Funktion
+    }
+    if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.9-sizebutton/7 && mouseY<(height/1.9+sizebutton/3)-sizebutton/7) {   
+      switch(lastLevel) {
+        
+        case 1:
+        gameState = 2;
+        break;
+        
+        case 2:
+        gameState = 3;
+        break;
+        
+        case 3:
+        gameState = 4;
+        break;
+      }
+}
+}
 }

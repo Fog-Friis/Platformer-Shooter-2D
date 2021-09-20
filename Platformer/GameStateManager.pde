@@ -1,3 +1,6 @@
+int lastLevel;
+int coinloss = 20;
+
 class GameStateManager {
 
   void setManagerUp() {
@@ -19,11 +22,11 @@ class GameStateManager {
       break;
 
     case 1:
-      runLevel1();
+      gameOverScreen();
       break;
 
     case 2:
-      gameOverScreen();
+      runLevel1();
       break;
 
     case 3:
@@ -31,24 +34,16 @@ class GameStateManager {
       break;
 
     case 4:
-      gameOverScreen();
-      break;
-
-    case 5:
       runLevel3();
       break;
-
-    case 6:
-      gameOverScreen();
-
 
     default:
       menuScreen();
       break;
     }
   }
-  
-  void levelPrefab(){
+
+  void levelPrefab() {
     background(background);
     lifeManager.run();
     player.run();
@@ -57,7 +52,7 @@ class GameStateManager {
     ps1.run();
     ps2.run();
     checkPoint.run();
-    
+
     fill(255, 215, 0);
     text(totalcoins+" coins", width-300, 50);
   }
@@ -75,26 +70,32 @@ class GameStateManager {
   }
 
   void menuScreen() {
+    
     clearScreen();
     background(background);
     fill(0, 0, 0);
     textSize(50);
     textAlign(CENTER);
     text("PLATFORM SHOOTER 2D", width / 2, height / 4);
-    textSize(40);
-    text("Main menu", width / 2, height / 2 - 50);
-    textSize(30);
-    text("press Space to play", width/2, height / 2 );
+    //textSize(40);
+    //text("Main menu", width / 2, height / 2 - 50);
+    //textSize(30);
+    //text("press Space to play", width/2, height / 2 );
+    But1 = new Button(width/1.88, height/1.5, 100, "Lore", color(100, 100, 100));
+    if (But1.visible) But1.show();
 
-    B1 = new Button(width/1.88, height/1.5, 100, "Lore", color(100, 100, 100));
-    if (B1.visible) B1.show();
+    But2 = new Button(width/1.88, height/1.25, 100, "Controls", color(100, 100, 100));
+    if (But1.visible) But2.show();
 
-    B2 = new Button(width/1.88, height/1.25, 100, "Controls", color(100, 100, 100));
-    if (B2.visible) B2.show();
+    But3 = new Button(width/1.88, height/1.9, 100, "Play", color(100, 100, 100));
+    if (But1.visible) But3.show();
+    
+    But6 = new Button(width/1.05, height/1.05, 100, "Cheese", color(255, 255, 0));
+    if (But1.visible) But6.show();
 
-    if (keyPressed && key == ' ') {
-      gameState = 1;
-    }
+
+    /*  if (keyPressed && key == ' ') {//Bruger ikke længere
+     gameState = 1; */
   }
 
   void gameOverScreen() {
@@ -103,21 +104,32 @@ class GameStateManager {
     fill(0, 0, 0);
     textSize(50);
     textAlign(CENTER);
-    text("GAME OVER", width / 2, height / 4);
+    text("GAME OVER", width / 2, height / 2.5);
     //textSize(40);
     //text("", width / 2, height / 2 - 50);
-    textSize(30);
-    text("press Space to play again", width/2, height / 2 );
+    
+    But4= new Button(width/1.88, height/1.9, 100, "Continue", color(100, 100, 100));
+    if (gameState == 1) But4.show();
 
-    if (keyPressed && key == ' ') {
-      gameState -= 1;
-    }
+    But5= new Button(width/1.88, height/1.5, 100, "Menu", color(100, 100, 100));
+    if (But4.visible) But5.show();
+    /*
+    text("press Space to play again", width/2, height / 2 );
+     
+     if (keyPressed && key == ' ') {
+     gameState -= 1;
+     }*/    //No longer in use
+     delay(1000);
   }
 
   void checkPlayerDeath() {
     if (player.health <= 0) {
       player.health = 100;
-      gameState += 1;
+      gameState = 1;
+      if (totalcoins > coinloss){
+        totalcoins -= coinloss;
+    }
+    else {totalcoins = 0;}
     }
   }
 
@@ -134,6 +146,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*3/8, height/4), width*3/4, 30));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
     levelPrefab();
+    lastLevel = 1;
 
     if (shooterEnemies.size() >= 0 && shooterEnemies.size() <= 1 && frameCount%200==0) {
       for (ShooterEnemy s : shooterEnemies) {
@@ -158,7 +171,8 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*3/8, height/4), width*3/4, 30));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
     levelPrefab();
-
+    lastLevel = 2;
+    
     if (enemies.size()>=0 && enemies.size() <=1 && frameCount%1000==0) {
       for (Enemy e : enemies) {
         e.health = 50;
@@ -188,6 +202,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*3/8, height/4), width*3/4, 30));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
     levelPrefab();
+    lastLevel = 3;
 
     if (enemies.size()>=0 && enemies.size() <=1 && frameCount%1000==0) {
       enemies.clear();

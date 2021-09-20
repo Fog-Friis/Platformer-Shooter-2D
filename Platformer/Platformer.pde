@@ -48,20 +48,18 @@ void keyReleased() {
 }
 
 void mousePressed() {
-
+  
   player.mousePress();
-  if (B1.visible) { //Hvis knappen ikke kan ses eksistere den ikke
-    if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
-      mouseY>height/1.5-sizebutton/7 && mouseY<(height/1.5+sizebutton/3)-sizebutton/7) {   //Ændre hvad height er divideret for fremtide knapper
-      link("https://github.com/Fog-Friis/Platformer-Shooter-2D/wiki/Lore"); //Funktion
-    }
-    if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
-      mouseY>height/1.25-sizebutton/7 && mouseY<(height/1.25+sizebutton/3)-sizebutton/7) {   
-      link("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"); //Funktion
-    }
+ if (gameState == 0) { //Hvis knappen ikke kan ses eksistere den ikke
+  But1.mainMenuB();
   }
-}
+  
+  if (gameState == 1) {
+  But4.gameOverB();
+  }
 
+ 
+} 
 void mouseReleased() {
   player.mouseRelease();
 }

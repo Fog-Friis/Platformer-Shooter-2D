@@ -10,6 +10,7 @@ class EnemyHandler {
       e.run();
       if (e.health <= 0) {
         fcoins = random(pmin, pmax);
+        fcoins += 0.5;
         int coins = (int) fcoins;
         ps2 = new ParticleSystem(new PVector(e.position.x, e.position.y));
         enemies.remove(i);
@@ -23,6 +24,7 @@ class EnemyHandler {
       e.run();
       if (e.health <= 0) {
         fcoins = random(pmin, pmax);
+        fcoins += 0.5;
         int coins = (int) fcoins;
         ps2 = new ParticleSystem(new PVector(e.position.x, e.position.y));
         shooterEnemies.remove(i);
