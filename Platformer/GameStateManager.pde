@@ -252,7 +252,8 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(0, height*3/4), width/8, 30));
     platforms.add(new Platform(new PVector(width*3/16, height*3/4+15), 20, 30*12));
     platforms.add(new Platform(new PVector(width*3/8, height/4), width*6/8, 30));
-    platforms.add(new Platform(new PVector(width*3/8, height/4), width*6/8, 30));
+    platforms.add(new Platform(new PVector(width*13/16, height*3/4), width/8, 30));
+    platforms.add(new Platform(new PVector(width*15/16, height/2), width/8, 30));
     platforms.add(new Platform(new PVector(width*6/8-10, height/2+15), 20, 30*12));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
     levelPrefab();
