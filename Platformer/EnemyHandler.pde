@@ -28,7 +28,13 @@ class EnemyHandler {
         fcoins += 0.5;
         int coins = (int) fcoins;
         ps2 = new ParticleSystem(new PVector(e.position.x, e.position.y));
-        shooterEnemies.remove(i);
+        e.position.x = 10000;
+
+        for (Bullet b : e.bullets) {
+          if (b.isDead()) {
+            shooterEnemies.remove(i);
+          }
+        }
         ps2.addParticle();
         totalcoins = totalcoins+coins;
         HipHopSound.play();
@@ -40,8 +46,8 @@ class EnemyHandler {
     if (key == 'p') {
       enemies.add(new Enemy(new PVector(random(200, width-200), random(200, height-200)), 100, 7, 50));
     }
-    
-    if (key == 'o'){
+
+    if (key == 'o') {
       shooterEnemies.add(new ShooterEnemy(new PVector(random(200, width - 200), random(200, height - 200)), 70, 30, 300, 300));
     }
   }
