@@ -72,7 +72,6 @@ class Button {
   }
    if  (mouseX>width/1.05-sizebutton/1.4 && mouseX<width/1.05+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.05-sizebutton/7 && mouseY<(height/1.05+sizebutton/3)-sizebutton/7) {  
-      if (totalcoins );
         Fcheese = random(1, 5);
       Fcheese += 0.5;
         cheese = (int) Fcheese;
