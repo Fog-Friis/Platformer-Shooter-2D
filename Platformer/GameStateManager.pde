@@ -2,17 +2,23 @@ int lastLevel;
 int coinloss = 20;
 
 class GameStateManager {
-
-  int spawnRate = 300;
-  int nextSpawnTime = spawnRate;
+  
+  int[] spawnRate = new int[100];
+  int nextSpawnTime = 0;
 
   void setManagerUp() {
+     
+    spawnRate[0] = 300;
+    spawnRate[1] = 10000;
+    spawnRate[2] = 300;
+    spawnRate[3] = 300;
 
     gameStateManager.setupLevel1();
     gameStateManager.setupLevel2();
     gameStateManager.setupLevel3();
     gameStateManager.setupLevel4();
     gameStateManager.setupLevel5();
+    gameStateManager.setupLevel6();
   }
 
   void manage() {
@@ -31,7 +37,7 @@ class GameStateManager {
       break;
 
     case 2:
-      runLevel1();
+      runLevel6();
       break;
 
     case 3:
@@ -48,6 +54,10 @@ class GameStateManager {
 
     case 6:
       runLevel5();
+      break;
+
+    case 7:
+      runLevel6();
       break;
 
     default:
@@ -93,10 +103,8 @@ class GameStateManager {
     //textSize(40);
     //text("Main menu", width / 2, height / 2 - 50);
     fill(255, 255, 0);
-    textSize(40);
-    text("Balance:" + totalcoins + "$", width/1.15, height / 9);
     textSize(30);
-    text("Cost: 69$", width/1.09, height / 1.11);
+    text(totalcoins + "$", width/1.1, height / 1.1);
     damageTaken = 0;
     But1 = new Button(width/1.88, height/1.5, 100, "Lore", color(100, 100, 100));
     if (But1.visible) But1.show();
@@ -106,7 +114,7 @@ class GameStateManager {
 
     But3 = new Button(width/1.88, height/1.9, 100, "Play", color(100, 100, 100));
     if (But1.visible) But3.show();
-    
+
     But6 = new Button(width/1.05, height/1.05, 100, "Cheese", color(255, 255, 0));
     if (But1.visible) But6.show();
 
@@ -175,7 +183,7 @@ class GameStateManager {
         shooterEnemies.add(new ShooterEnemy(new PVector(width*7/8, height*1/8), 70, 30, 300, 300));
         shooterEnemies.add(new ShooterEnemy(new PVector(width*1/8, height/2), 70, 30, 300, 300));
         shooterEnemies.add(new ShooterEnemy(new PVector(width*7/8, height*7/8), 70, 30, 300, 300));
-        nextSpawnTime = frameCount + spawnRate;
+        nextSpawnTime = frameCount + spawnRate[0];
       }
     }
     println(nextSpawnTime);
@@ -203,7 +211,7 @@ class GameStateManager {
         shooterEnemies.clear();
         shooterEnemies.add(new ShooterEnemy(new PVector(width*7/8, height*1/8), 70, 30, 300, 300));
         shooterEnemies.add(new ShooterEnemy(new PVector(width*1/8, height*3/8), 70, 30, 300, 300));
-        nextSpawnTime = frameCount + spawnRate;
+        nextSpawnTime = frameCount + spawnRate[0];
       }
     }
     println(nextSpawnTime);
@@ -237,7 +245,7 @@ class GameStateManager {
         shooterEnemies.add(new ShooterEnemy(new PVector(width*7/8, height*1/8), 70, 30, 300, 300));
         shooterEnemies.add(new ShooterEnemy(new PVector(width*1/8, height*3/8), 70, 30, 300, 300));
         shooterEnemies.add(new ShooterEnemy(new PVector(width*1/4, height*1/8), 70, 30, 300, 300));
-        nextSpawnTime = frameCount + spawnRate;
+        nextSpawnTime = frameCount + spawnRate[0];
       }
     }
     println(nextSpawnTime);
@@ -273,7 +281,7 @@ class GameStateManager {
         shooterEnemies.clear();
         shooterEnemies.add(new ShooterEnemy(new PVector(width*7/8, height*1/8), 70, 30, 300, 300));
         shooterEnemies.add(new ShooterEnemy(new PVector(width*1/4, height*5/8), 70, 30, 300, 300));
-        nextSpawnTime = frameCount + spawnRate;
+        nextSpawnTime = frameCount + spawnRate[0];
       }
     }
     println(nextSpawnTime);
@@ -311,7 +319,32 @@ class GameStateManager {
         shooterEnemies.clear();
         shooterEnemies.add(new ShooterEnemy(new PVector(width*7/8, height*7/8), 70, 30, 300, 300));
         shooterEnemies.add(new ShooterEnemy(new PVector(width*1/8, height*7/16), 70, 30, 300, 300));
-        nextSpawnTime = frameCount + spawnRate;
+        nextSpawnTime = frameCount + spawnRate[0];
+      }
+    }
+    println(nextSpawnTime);
+  }
+  
+  void setupLevel6() {
+    player = new Player(new PVector(width/10, height - 60), 10, 1, 100);
+    checkPoint = new CheckPoint(new PVector(width-100, height-100), 80, 120);
+  }
+
+  void runLevel6() {
+    platforms.clear();
+    platforms.add(new Platform(new PVector(width/2, height*13/16), width/16, height*5/16));
+    checkPoint = new CheckPoint(new PVector(width-100, height-100), 80, 120);
+    levelPrefab();
+
+    if (frameCount >= nextSpawnTime) {
+      if (shooterEnemies.size() >= 0 && shooterEnemies.size() <= 2) {
+        for (ShooterEnemy s : shooterEnemies) {
+          s.health = 30;
+        }
+        shooterEnemies.clear();
+        shooterEnemies.add(new ShooterEnemy(new PVector(width, 0), 70, 30, 8, 60));
+        shooterEnemies.add(new ShooterEnemy(new PVector(0, 0), 70, 30, 8, 60));
+        nextSpawnTime = frameCount + spawnRate[1];
       }
     }
     println(nextSpawnTime);
