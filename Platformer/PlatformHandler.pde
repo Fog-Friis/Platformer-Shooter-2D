@@ -9,7 +9,7 @@ class PlatformHandler {
       p.run();
       if (p.isOn(player.position)) {
         player.velocity.y = 0;
-        player.position.y = p.position.y - 40;
+        player.position.y = p.position.y - (25+p.pHeight / 2);
         player.grounded = true;
       } else if (player.position.y >= height - 50) {
         player.velocity.y = player.velocity.y*0;
@@ -22,6 +22,18 @@ class PlatformHandler {
       } else if (player.position.y <= 25){
         player.velocity.y = 0;
         player.position.y = 25;
+      }
+      if (p.isLeft(player.position)){
+        println("bruh");
+        player.velocity.x = 0;
+        //player.position.y = p.position.y;
+        player.position.x = 2 * p.position.x + 26;
+        //+ p.pHeight / 2 + 21;
+      }
+      if (p.isRight(player.position)){
+        println("benis");
+        player.velocity.x = 0;
+        player.position.x = p.position.x - p.pLength / 2 - 26;
       }
     }
   }
