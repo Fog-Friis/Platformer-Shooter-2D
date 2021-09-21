@@ -72,7 +72,8 @@ class Button {
   }
    if  (mouseX>width/1.05-sizebutton/1.4 && mouseX<width/1.05+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.05-sizebutton/7 && mouseY<(height/1.05+sizebutton/3)-sizebutton/7) {  
-      if (totalcoins );
+     if (totalcoins >= 69){
+        totalcoins -= 69;
         Fcheese = random(1, 5);
       Fcheese += 0.5;
         cheese = (int) Fcheese;
@@ -97,11 +98,11 @@ class Button {
       link("https://www.youtube.com/watch?v=SyimUCBIo6c&ab_channel=Jensen"); //Funktion
       break;
       
-      
+        }
         }
     }
- }
-
+ 
+}
   void gameOverB() {
     if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.5-sizebutton/7 && mouseY<(height/1.5+sizebutton/3)-sizebutton/7) {   //Ændre hvad height er divideret for fremtide knapper

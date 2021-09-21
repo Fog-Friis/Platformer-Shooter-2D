@@ -79,8 +79,9 @@ class GameStateManager {
     text("PLATFORM SHOOTER 2D", width / 2, height / 4);
     //textSize(40);
     //text("Main menu", width / 2, height / 2 - 50);
-    //textSize(30);
-    //text("press Space to play", width/2, height / 2 );
+    fill(255, 255, 0);
+    textSize(30);
+    text(coins + " coins", width/1.1, height / 1.1);
     But1 = new Button(width/1.88, height/1.5, 100, "Lore", color(100, 100, 100));
     if (But1.visible) But1.show();
 
