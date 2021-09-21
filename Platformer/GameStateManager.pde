@@ -51,7 +51,7 @@ class GameStateManager {
       break;
 
     default:
-      menuScreen();
+      gameState = 0;
       break;
     }
   }
