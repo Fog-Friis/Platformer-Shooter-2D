@@ -30,6 +30,15 @@ class Enemy {
     translate(position.x, position.y);
     fill(3*health+150, 0, 0);
     rect(0, 0, size, size, size / 8, size / 8, size / 8, size / 8);
+    fill(100,100,100, health);
+    
+    line(15, -15, 35, -25 );
+    fill(100,100,100, health);
+    line(-15, -15, -35, -25 );
+    fill(100,100,100, health);
+    line(15,10,-15,10);
+   
+    
     popMatrix();
   }
 
@@ -127,12 +136,11 @@ class ShooterEnemy {
 
     fill(3*health+100, 0, 3*health+100);
     rect(0, 0, size, size, size / 5, size / 5, size / 5, size / 5);
-
+    
     rotate(theta);
     fill(90, 0, 90);
     rect(0, 0, 3*size/2, 10);
-
-
+     
     popMatrix();
   }
 
