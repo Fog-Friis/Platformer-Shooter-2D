@@ -65,12 +65,11 @@ class GameStateManager {
     }
     shooterEnemies.clear();
     particles.clear();
-    player.health = 100;
+    player.health = 100 - damageTaken  ;
     player.position = new PVector(width / 10, height - 60);
   }
 
   void menuScreen() {
-    
     clearScreen();
     background(background);
     fill(0, 0, 0);
@@ -82,6 +81,9 @@ class GameStateManager {
     fill(255, 255, 0);
     textSize(30);
     text(totalcoins + "$", width/1.1, height / 1.1);
+    
+    damageTaken = 0;
+    
     But1 = new Button(width/1.88, height/1.5, 100, "Lore", color(100, 100, 100));
     if (But1.visible) But1.show();
 
@@ -109,6 +111,8 @@ class GameStateManager {
     //textSize(40);
     //text("", width / 2, height / 2 - 50);
     
+    damageTaken = 0;
+    
     But4= new Button(width/1.88, height/1.9, 100, "Continue", color(100, 100, 100));
     if (gameState == 1) But4.show();
 
@@ -121,6 +125,7 @@ class GameStateManager {
      gameState -= 1;
      }*/    //No longer in use
      delay(1000);
+     
   }
 
   void checkPlayerDeath() {

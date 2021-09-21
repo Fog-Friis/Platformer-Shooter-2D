@@ -81,6 +81,7 @@ class ShooterEnemy {
       if (dist(player.position.x, player.position.y, b.position.x, b.position.y)<35) {
         bullets.remove(i);
         player.health -= 10;
+        damageTaken += 10;
         fdeathN = random(1,5);
           fdeathN += 0.5;
           deathN  = (int) fdeathN;
