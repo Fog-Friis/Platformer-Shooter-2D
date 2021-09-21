@@ -19,7 +19,7 @@ class Platform {
   }
 
   boolean isOver(PVector p) {
-    if (p.x >= position.x - pLength / 2 - 10 && p.x <= position.x + pLength / 2 + 10 && p.y <= position.y + pHeight && p.y >= position.y) {
+    if (p.x >= position.x - pLength / 2 - 10 && p.x <= position.x + pLength / 2 + 10 && p.y <= position.y + pHeight / 2 + 25 && p.y >= position.y) {
       return true;
     } else {
       return false;
@@ -35,7 +35,7 @@ class Platform {
   }
   
     boolean isRight(PVector p){
-    if (p.x >= position.x - pLength / 2 - 25 && p.x <= position.x && p.y <= position.y + pHeight && p.y >= position.y - pHeight){
+    if (p.x >= position.x - pLength / 2 - 25 && p.x <= position.x && p.y <= position.y + pHeight/2 && p.y >= position.y - pHeight/2){
       return true;
     } else {
       return false;
