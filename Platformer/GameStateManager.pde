@@ -31,7 +31,7 @@ class GameStateManager {
       break;
 
     case 2:
-      runLevel1();
+      runLevel4();
       break;
 
     case 3:
@@ -249,29 +249,11 @@ class GameStateManager {
   void runLevel4() {
     platforms.clear();
     platforms.add(new Platform(new PVector(width/3+17, height/2), width/3, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+31), 20, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+62), 20, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+93), 20, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+93+31), 20, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+93+62), 20, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+93+93), 20, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+93+93+31), 20, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+93+93+62), 20, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+93+93+93), 20, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+93+93+93+31), 20, 30));
-    platforms.add(new Platform(new PVector(width*3/16, height / 2+93+93+93+62), 20, 30));
+    platforms.add(new Platform(new PVector(0, height*3/4), width/8, 30));
+    platforms.add(new Platform(new PVector(width*3/16, height*3/4+15), 20, 30*12));
     platforms.add(new Platform(new PVector(width*3/8, height/4), width*6/8, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+31), 20, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+62), 20, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+93), 20, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+93+31), 20, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+93+62), 20, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+93+93), 20, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+93+93+31), 20, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+93+93+62), 20, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+93+93+93), 20, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+93+93+93+31), 20, 30));
-    platforms.add(new Platform(new PVector(width*6/8, height / 4+93+93+93+62), 20, 30));
+    platforms.add(new Platform(new PVector(width*3/8, height/4), width*6/8, 30));
+    platforms.add(new Platform(new PVector(width*6/8-10, height/2+15), 20, 30*12));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
     levelPrefab();
 
