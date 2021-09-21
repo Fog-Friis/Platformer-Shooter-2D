@@ -11,7 +11,7 @@ class Platform {
   }
 
   boolean isOn(PVector p) {
-    if (p.x >= position.x - pLength / 2 - 10 && p.x <= position.x + pLength / 2 + 10 && p.y >= position.y -40 && p.y <= position.y + pHeight / 2) {
+    if (p.x >= position.x - pLength / 2 - 10 && p.x <= position.x + pLength / 2 + 10 && p.y >= position.y - pHeight / 2 - 25 && p.y <= position.y + pHeight / 2) {
       return true;
     } else {
       return false;
