@@ -103,8 +103,10 @@ class GameStateManager {
     //textSize(40);
     //text("Main menu", width / 2, height / 2 - 50);
     fill(255, 255, 0);
+    textSize(40);
+    text("Balance:" + totalcoins + "$", width/1.15, height / 9);
     textSize(30);
-    text(totalcoins + "$", width/1.1, height / 1.1);
+    text("Cost: 69$", width/1.09, height / 1.11);
     damageTaken = 0;
     But1 = new Button(width/1.88, height/1.5, 100, "Lore", color(100, 100, 100));
     if (But1.visible) But1.show();
