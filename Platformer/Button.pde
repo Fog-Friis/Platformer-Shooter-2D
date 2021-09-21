@@ -74,8 +74,8 @@ class Button {
       mouseY>height/1.05-sizebutton/7 && mouseY<(height/1.05+sizebutton/3)-sizebutton/7) {  
      if (totalcoins >= 69){
         totalcoins -= 69;
-        Fcheese = random(1, 5);
-      Fcheese += 0.5;
+        Fcheese = random(1, 5.9999999);
+      //Fcheese += 0.5;
         cheese = (int) Fcheese;
         switch(cheese) {
           case 1:

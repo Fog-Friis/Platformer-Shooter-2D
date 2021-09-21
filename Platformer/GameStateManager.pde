@@ -31,7 +31,7 @@ class GameStateManager {
       break;
 
     case 2:
-      runLevel4();
+      runLevel1();
       break;
 
     case 3:

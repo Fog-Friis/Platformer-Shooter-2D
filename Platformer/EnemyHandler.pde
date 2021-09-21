@@ -24,20 +24,26 @@ class EnemyHandler {
       ShooterEnemy e = shooterEnemies.get(i);
       e.run();
       if (e.health <= 0) {
-        fcoins = random(pmin, pmax);
+        
+      fcoins = random(pmin, pmax);
         fcoins += 0.5;
         int coins = (int) fcoins;
         ps2 = new ParticleSystem(new PVector(e.position.x, e.position.y));
+        ps2.addParticle();
+        totalcoins = totalcoins+coins;
+        HipHopSound.play(); 
         e.position.x = 10000;
-
+         e.health = 30;
+        
+        
         for (Bullet b : e.bullets) {
           if (b.isDead()) {
             shooterEnemies.remove(i);
+            
+        
           }
         }
-        ps2.addParticle();
-        totalcoins = totalcoins+coins;
-        HipHopSound.play();
+        
       }
     }
   }
