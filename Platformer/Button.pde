@@ -33,6 +33,7 @@ class Button {
   color col;
   String caption;
   boolean visible=true;
+  boolean mouseOver=false;
 
   Button(float x, float y, float r, String txt, color c) {
     pos = new PVector(x, y);
@@ -56,6 +57,8 @@ class Button {
     text(caption, tx, ty);
   }
     void mainMenuB() {    
+      
+      
     if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.5-sizebutton/7 && mouseY<(height/1.5+sizebutton/3)-sizebutton/7) {   //Ændre hvad height er divideret for fremtide knapper
       link("https://github.com/Fog-Friis/Platformer-Shooter-2D/wiki/Lore"); //Funktion
