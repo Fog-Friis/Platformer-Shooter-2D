@@ -5,7 +5,7 @@ class Player {
   PVector acceleration = new PVector();
   PVector gravity = new PVector(0, 2);
   PVector jumpForce = new PVector(0, -100);
-  float theta, health, mass, sprintSpeed, dir;
+  float theta, health, mass, dir;
   float speed = 4;
   float nextAttackTime = 0;
   float attackRate = 10;
@@ -29,14 +29,14 @@ class Player {
     if (key == 'a') left = true;
     if (key == 'd') right = true;
     if (key == ' ') jump = true;
-    if (keyCode == SHIFT) sprint = true;
+    if (keyCode == SHIFT) sprint = !sprint;
   }
 
   void keyRelease() {
     if (key == 'a') left = false;
     if (key == 'd') right = false;
     if (key == ' ') jump = false;
-    if (keyCode == SHIFT) sprint = false;
+    //if (keyCode == SHIFT) sprint = false;
   }
 
   void mousePress() {
@@ -70,9 +70,9 @@ class Player {
     }
 
     if (sprint) {
-      sprintSpeed = 2.5;
+      speed = 10;
     } else {
-      sprintSpeed = 1;
+      speed = 4;
     }
 
     if (frameCount >= nextAttackTime) {
@@ -138,7 +138,7 @@ class Player {
 
     applyForce(gravity);
 
-    velocity.x = velocity.x + dir*speed*sprintSpeed;
+    velocity.x = velocity.x + dir*speed;
     velocity.add(acceleration);
     position.add(velocity);
 

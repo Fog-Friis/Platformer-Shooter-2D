@@ -3,6 +3,9 @@ int coinloss = 20;
 
 class GameStateManager {
 
+  int spawnRate = 300;
+  int nextSpawnTime = spawnRate;
+
   void setManagerUp() {
 
     gameStateManager.setupLevel1();
@@ -70,7 +73,7 @@ class GameStateManager {
   }
 
   void menuScreen() {
-    
+
     clearScreen();
     background(background);
     fill(0, 0, 0);
@@ -90,7 +93,7 @@ class GameStateManager {
 
     But3 = new Button(width/1.88, height/1.9, 100, "Play", color(100, 100, 100));
     if (But1.visible) But3.show();
-    
+
     But6 = new Button(width/1.05, height/1.05, 100, "Cheese", color(255, 255, 0));
     if (But1.visible) But6.show();
 
@@ -108,7 +111,7 @@ class GameStateManager {
     text("GAME OVER", width / 2, height / 2.5);
     //textSize(40);
     //text("", width / 2, height / 2 - 50);
-    
+
     But4= new Button(width/1.88, height/1.9, 100, "Continue", color(100, 100, 100));
     if (gameState == 1) But4.show();
 
@@ -120,17 +123,18 @@ class GameStateManager {
      if (keyPressed && key == ' ') {
      gameState -= 1;
      }*/    //No longer in use
-     delay(1000);
+    delay(1000);
   }
 
   void checkPlayerDeath() {
     if (player.health <= 0) {
       player.health = 100;
       gameState = 1;
-      if (totalcoins > coinloss){
+      if (totalcoins > coinloss) {
         totalcoins -= coinloss;
-    }
-    else {totalcoins = 0;}
+      } else {
+        totalcoins = 0;
+      }
     }
   }
 
@@ -149,13 +153,26 @@ class GameStateManager {
     levelPrefab();
     lastLevel = 1;
 
-    if (shooterEnemies.size() >= 0 && shooterEnemies.size() <= 1 && frameCount%200==0) {
+    /*if (shooterEnemies.size() >= 0 && shooterEnemies.size() <= 1 && frameCount%200==0) {
       for (ShooterEnemy s : shooterEnemies) {
         s.health = 30;
       }
       shooterEnemies.clear();
       shooterEnemies.add(new ShooterEnemy(new PVector(width*7/8, height*1/8), 70, 30, 300, 300));
+    }*/
+
+    if (frameCount >= nextSpawnTime) {
+      if (shooterEnemies.size() >= 0 && shooterEnemies.size() <= 2) {
+        for (ShooterEnemy s : shooterEnemies) {
+          s.health = 30;
+        }
+        shooterEnemies.clear();
+        shooterEnemies.add(new ShooterEnemy(new PVector(width*7/8, height*1/8), 70, 30, 300, 300));
+        shooterEnemies.add(new ShooterEnemy(new PVector(width*7/8, height*3/8), 70, 30, 300, 300));
+        nextSpawnTime = frameCount + spawnRate;
+      }
     }
+    println(nextSpawnTime);
   }
 
 
@@ -173,7 +190,7 @@ class GameStateManager {
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
     levelPrefab();
     lastLevel = 2;
-    
+
     if (enemies.size()>=0 && enemies.size() <=1 && frameCount%1000==0) {
       for (Enemy e : enemies) {
         e.health = 50;
