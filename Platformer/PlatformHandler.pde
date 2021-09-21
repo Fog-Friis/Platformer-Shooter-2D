@@ -27,7 +27,7 @@ class PlatformHandler {
         println("bruh");
         player.velocity.x = 0;
         //player.position.y = p.position.y;
-        player.position.x = 2 * p.position.x + 26;
+        player.position.x = p.position.x + p.pLength / 2 + 26;
         //+ p.pHeight / 2 + 21;
       }
       if (p.isRight(player.position)){

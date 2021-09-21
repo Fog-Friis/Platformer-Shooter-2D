@@ -27,7 +27,7 @@ class Platform {
   }
   
   boolean isLeft(PVector p){
-    if (p.x <= position.x + pLength / 2 + 25 && p.x >= position.x && p.y <= position.y + pHeight && p.y >= position.y - pHeight){
+    if (p.x <= position.x + pLength / 2 + 25 && p.x >= position.x && p.y <= position.y + pHeight / 2 && p.y >= position.y - pHeight / 2){
       return true;
     } else {
       return false;

@@ -26,15 +26,15 @@ class Player {
   }
 
   void keyPress() {
-    if (key == 'a') left = true;
-    if (key == 'd') right = true;
+    if (key == 'a' || key == 'A') left = true;
+    if (key == 'd' || key == 'D') right = true;
     if (key == ' ') jump = true;
     if (keyCode == SHIFT) sprint = !sprint;
   }
 
   void keyRelease() {
-    if (key == 'a') left = false;
-    if (key == 'd') right = false;
+    if (key == 'a' || key == 'A') left = false;
+    if (key == 'd' || key == 'D') right = false;
     if (key == ' ') jump = false;
     //if (keyCode == SHIFT) sprint = false;
   }
