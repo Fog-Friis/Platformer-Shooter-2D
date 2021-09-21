@@ -1,3 +1,5 @@
+//Script fungere ikke sammen med andre particler på skærmen
+
 class Blood extends Particle {
 
   Blood(PVector l) {

@@ -1,5 +1,6 @@
 float fdeathN;
 int deathN;
+int damageTaken = 0;
 
 class LifeManager {
 
@@ -13,6 +14,7 @@ class LifeManager {
         if (dist(player.position.x, player.position.y, e.position.x, e.position.y)<e.size/2+25) {
           e.health = 0;
           player.health -= 10;
+          damageTaken += 10;
           nextAttackTime += attackRate;
           ps1 = new ParticleSystem(new PVector(player.position.x,player.position.y));
          // ps1.addBlood();
