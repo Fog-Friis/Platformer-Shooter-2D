@@ -54,7 +54,7 @@ class GameStateManager {
     checkPoint.run();
 
     fill(255, 215, 0);
-    text(totalcoins+" coins", width-300, 50);
+    text(totalcoins+" $", width-300, 50);
   }
 
   void clearScreen() {

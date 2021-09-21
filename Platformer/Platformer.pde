@@ -1,5 +1,5 @@
 import processing.sound.*;
-SoundFile death1,death2,death3,death4,death5;
+SoundFile death1,death2,death3,death4,death5,HipHopSound;
 
 Player player;
 ArrayList<Enemy> enemies;
@@ -36,6 +36,7 @@ void setup() {
   death3 = new SoundFile(this, "Lando.wav");
   death4 = new SoundFile(this, "WilhelmScream.wav");
   death5 = new SoundFile(this, "YoungAnakin.wav");
+  HipHopSound = new SoundFile(this, "Stud.wav");
 }
 
 void keyPressed() {

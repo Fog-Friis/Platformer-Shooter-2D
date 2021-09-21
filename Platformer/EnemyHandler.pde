@@ -16,6 +16,7 @@ class EnemyHandler {
         enemies.remove(i);
         ps2.addParticle();
         totalcoins = totalcoins+coins;
+        HipHopSound.play();
       }
     }
 
@@ -30,6 +31,7 @@ class EnemyHandler {
         shooterEnemies.remove(i);
         ps2.addParticle();
         totalcoins = totalcoins+coins;
+        HipHopSound.play();
       }
     }
   }
