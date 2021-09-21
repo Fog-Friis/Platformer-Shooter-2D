@@ -41,9 +41,6 @@ class CheckPoint {
       player.position.y = height - 50;
       gameState += 1;
     }
-    if (gameState == 5){
-    gameState = 0;
-    }
     
     
   }
