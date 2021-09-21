@@ -33,6 +33,7 @@ class CheckPoint {
       player.position.x = width / 10;
       player.position.y = height - 50;
       gameState += 1;
+      gameStateManager.nextSpawnTime = 0;
     }
     
     if(isOver(player.position)){
@@ -40,6 +41,7 @@ class CheckPoint {
       player.position.x = width / 10;
       player.position.y = height - 50;
       gameState += 1;
+      gameStateManager.nextSpawnTime = 0;      
     }
     
     

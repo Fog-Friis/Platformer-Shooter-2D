@@ -71,6 +71,7 @@ class Button {
     if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.9-sizebutton/7 && mouseY<(height/1.9+sizebutton/3)-sizebutton/7) {   
       gameState = 2;
+      gameStateManager.nextSpawnTime = 0;
            
   }
    if  (mouseX>width/1.05-sizebutton/1.4 && mouseX<width/1.05+sizebutton-sizebutton/1.4 &&    

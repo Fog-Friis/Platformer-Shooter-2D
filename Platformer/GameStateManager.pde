@@ -9,7 +9,7 @@ class GameStateManager {
   void setManagerUp() {
      
     spawnRate[0] = 300;
-    spawnRate[1] = 10000;
+    spawnRate[1] = 1000;
     spawnRate[2] = 300;
     spawnRate[3] = 300;
 
@@ -37,7 +37,7 @@ class GameStateManager {
       break;
 
     case 2:
-      runLevel6();
+      runLevel1();
       break;
 
     case 3:
