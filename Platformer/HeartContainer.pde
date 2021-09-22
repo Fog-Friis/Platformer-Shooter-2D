@@ -1,8 +1,12 @@
 class HeartContainer {
 
+  void setContainerUp(){
+    show = 255;
+  }
+  
+  int show = 255;
   PVector position;
   Float hCsize;
-  int show = 255;
   
   HeartContainer (PVector position, float hCsize) {
     this.position = position;

@@ -38,7 +38,7 @@ void setup() {
   death4 = new SoundFile(this, "WilhelmScream.wav");
   death5 = new SoundFile(this, "YoungAnakin.wav");
   HipHopSound = new SoundFile(this, "Stud.wav");
-  //heartContainer = new HeartContainer();
+  //heartContainer.setContainerUp();
 }
 
 void keyPressed() {
@@ -69,4 +69,5 @@ void mouseReleased() {
 
 void draw() {
   gameStateManager.manage();
+  println(heartContainer.show);
 }

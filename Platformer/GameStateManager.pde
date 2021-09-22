@@ -36,7 +36,7 @@ class GameStateManager {
       break;
 
     case 2:
-      runLevel4();
+      runLevel1();
       break;
 
     case 3:
@@ -165,7 +165,7 @@ class GameStateManager {
   void setupLevel1() {
     player = new Player(new PVector(width / 10, height - 60), 10, 1, 100);
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
-    //heartContainer = new HeartContainer(new PVector(100, 100), 80, 120);
+    heartContainer = new HeartContainer(new PVector(300, 100), 60);
     enemies.clear();
     shooterEnemies.clear();
   }
@@ -176,8 +176,8 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*5/8, height / 2), width*3/4, 30));
     platforms.add(new Platform(new PVector(width*3/8, height/4), width*3/4, 30));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
-    //heartContainer = new HeartContainer(new PVector(100, 100), 80, 120);
     levelPrefab();
+    heartContainer.run();
     lastLevel = 1;
 
     if (frameCount >= nextSpawnTime) {
