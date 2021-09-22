@@ -13,6 +13,7 @@ LifeManager lifeManager;
 GameStateManager gameStateManager;
 int gameState = 0;
 CheckPoint checkPoint;
+HeartContainer heartContainer;
 //BackgroundManager backgroundManager;
 
 void setup() {

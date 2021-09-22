@@ -17,22 +17,18 @@ class HeartContainer {
     }
   }
 
-
-
-
   void update() {
     if(isOn(player.position)){
     damageTaken = 0;
     player.health = 100;
     }
-      
     
   }
 
   void display() {
     pushMatrix();
     translate(position.x, position.y);
-    fill(0,255,0);
+    fill(255,200,255);
     rect(hCsize,hCsize,hCsize,hCsize);
     popMatrix();
   }
