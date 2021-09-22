@@ -75,6 +75,7 @@ class GameStateManager {
     ps1.run();
     ps2.run();
     checkPoint.run();
+    HeartContainer.run();
 
     fill(255, 215, 0);
     text(totalcoins+" $", width-300, 50);
@@ -165,6 +166,7 @@ class GameStateManager {
   void setupLevel1() {
     player = new Player(new PVector(width / 10, height - 60), 10, 1, 100);
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
+    HeartContainer = new HeartContainer(new PVector(100, 100), 80, 120);
   }
 
   void runLevel1() {
