@@ -24,14 +24,12 @@ class PlatformHandler {
         player.position.y = 25;
       }
       if (p.isLeft(player.position)){
-        println("bruh");
         player.velocity.x = 0;
         //player.position.y = p.position.y;
         player.position.x = p.position.x + p.pLength / 2 + 26;
         //+ p.pHeight / 2 + 21;
       }
       if (p.isRight(player.position)){
-        println("benis");
         player.velocity.x = 0;
         player.position.x = p.position.x - p.pLength / 2 - 26;
       }

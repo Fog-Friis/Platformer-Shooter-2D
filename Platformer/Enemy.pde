@@ -71,7 +71,6 @@ class ShooterEnemy {
   }
 
   void shoot() {
-    //println("shot");
     pushMatrix();
     translate(position.x, position.y);
     bullets.add(new Bullet(new PVector(35*cos(theta)+position.x, 35*sin(theta)+position.y), theta, 10, dir));

@@ -7,18 +7,10 @@ class CheckPoint {
     this.position = position;
     this.cLength = cLength;
     this.cHeight = cHeight;
-  }
-  
-    boolean isOn(PVector p) {
-    if (p.x >= position.x - cLength / 2 - 20 && p.x <= position.x + cLength / 2 + 20 && p.y >= position.y -40 && p.y <= position.y + cHeight / 2) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  }  
 
-  boolean isOver(PVector p) {
-    if (p.x >= position.x - cLength / 2 - 20 && p.x <= position.x + cLength / 2 + 20 && p.y <= position.y + cHeight && p.y >= position.y) {
+  boolean contains(PVector p) {
+    if (p.x >= position.x - cLength / 2 - 25 && p.x <= position.x + cLength / 2 + 25 && p.y <= position.y + cHeight / 2 && p.y >= position.y - cHeight/2 - 25) {
       return true;
     } else {
       return false;
@@ -27,32 +19,22 @@ class CheckPoint {
 
 
 
-  void update() {
-    if(isOn(player.position)){
+  void update() {        
+    if (contains(player.position)) {
       gameStateManager.clearScreen();
       player.position.x = width / 10;
       player.position.y = height - 50;
       gameState += 1;
       gameStateManager.nextSpawnTime = 0;
+      heartContainer.show = 255;
     }
-    
-    if(isOver(player.position)){
-      gameStateManager.clearScreen();
-      player.position.x = width / 10;
-      player.position.y = height - 50;
-      gameState += 1;
-      gameStateManager.nextSpawnTime = 0;      
-    }
-    
-    
   }
 
   void display() {
     pushMatrix();
     translate(position.x, position.y);
     stroke(1);
-    fill(0,255,0);
-    //rect(0,0,cLength,cHeight);
+    fill(0, 255, 0);
     quad(-cLength / 2, cHeight / 2 - cHeight / 2, 0, cHeight - cHeight / 2, cLength / 2, cHeight / 2 - cHeight / 2, 0, -cHeight / 2);
     popMatrix();
   }

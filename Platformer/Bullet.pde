@@ -41,7 +41,5 @@ class Bullet {
   void run() {
     update();
     display();
-    //hasHit();
-    //println(angle);
   }
 }
