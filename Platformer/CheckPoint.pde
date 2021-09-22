@@ -25,9 +25,24 @@ class CheckPoint {
       player.position.x = width / 10;
       player.position.y = height - 50;
       gameState += 1;
+<<<<<<< Updated upstream
       gameStateManager.nextSpawnTime = 0;
       heartContainer.show = 255;
     }
+=======
+      gameStateManager.nextSpawnTime = 30;
+    }
+    
+    if(isOver(player.position)){
+      gameStateManager.clearScreen();
+      player.position.x = width / 11;
+      player.position.y = height - 50;
+      gameState += 1;
+      gameStateManager.nextSpawnTime = 0;      
+    }
+    
+    
+>>>>>>> Stashed changes
   }
 
   void display() {
