@@ -78,8 +78,12 @@ class GameStateManager {
     case 11:
       runLevel10();
       break;
+      
+      case 12:
+      controlScreen();
+      break;
 
-    default:
+      default:
       gameState = 0;
       break;
     }
@@ -111,17 +115,29 @@ class GameStateManager {
     player.health = 100 - damageTaken;
     player.position = new PVector(width / 10, height - 60);
   }
+  void controlScreen() {
+    clearScreen();   
+    background(backgroundControl);
+    fill(0, 0, 0);
+    textSize(50);
+    textAlign(CENTER);
+    //text("PLATFORM SHOOTER 2D", width / 2, height / 4);
+    
+    fill(255, 255, 0);
+    textSize(40);
+    text("Balance:" + totalcoins + "$", width/1.15, height / 9);
+
+    But7 = new Button(width/1.88, height/1.10, 100, "Back", color(100, 100, 100));
+    if (But1.visible) But7.show();
+  }
 
   void menuScreen() {
-
     clearScreen();
     background(background);
     fill(0, 0, 0);
     textSize(50);
     textAlign(CENTER);
     text("PLATFORM SHOOTER 2D", width / 2, height / 4);
-    //textSize(40);
-    //text("Main menu", width / 2, height / 2 - 50);
     fill(255, 255, 0);
     textSize(40);
     text("Balance:" + totalcoins + "$", width/1.15, height / 9);
@@ -139,14 +155,12 @@ class GameStateManager {
 
     But6 = new Button(width/1.05, height/1.05, 100, "Cheese", color(255, 255, 0));
     if (But1.visible) But6.show();
+    
+    
 
-
-    /*  if (keyPressed && key == ' ') {//Bruger ikke længere
-     gameState = 1; */
   }
-
   void gameOverScreen() {
-    clearScreen();
+    clearScreen();  
     background(255);
     fill(0, 0, 0);
     textSize(50);
