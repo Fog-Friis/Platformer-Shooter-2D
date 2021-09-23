@@ -63,7 +63,7 @@ void mousePressed() {
   But4.gameOverB();
   }
   
-  if (gameState == 8){
+  if (gameState == 12){
   But1.controlScreenB();
   }
  
