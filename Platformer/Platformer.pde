@@ -20,7 +20,7 @@ HeartContainer heartContainer;
 void setup() {
   size(1280, 720);
   background = loadImage("Background-OG2.png");
-  backgroundControl = loadImage("BackgroundControl.png");
+  backgroundControl = loadImage("BackGroundControl.png");
   gameStateManager = new GameStateManager();
   enemyHandler = new EnemyHandler();
   enemyHandler.setupEnemies();
