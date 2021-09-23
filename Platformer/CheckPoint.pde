@@ -22,10 +22,10 @@ class CheckPoint {
   void update() {        
     if (contains(player.position)) {
       gameStateManager.clearScreen();
-      player.position.x = width / 10;
+      player.position.x = width / 11;
       player.position.y = height - 50;
       gameState += 1;
-      gameStateManager.nextSpawnTime = 0;
+      //ddddddddddddgameStateManager.nextSpawnTime = 0;
       heartContainer.show = 255;
     }
   }
