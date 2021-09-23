@@ -1,1 +1,1 @@
-PImage background;
+PImage background, backgroundControl;

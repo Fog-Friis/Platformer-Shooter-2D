@@ -16,9 +16,11 @@ CheckPoint checkPoint;
 HeartContainer heartContainer;
 //BackgroundManager backgroundManager;
 
+
 void setup() {
   size(1280, 720);
   background = loadImage("Background-OG2.png");
+  backgroundControl = loadImage("BackgroundControl.png");
   gameStateManager = new GameStateManager();
   enemyHandler = new EnemyHandler();
   enemyHandler.setupEnemies();
@@ -60,7 +62,10 @@ void mousePressed() {
   if (gameState == 1) {
   But4.gameOverB();
   }
-
+  
+  if (gameState == 8){
+  But1.controlScreenB();
+  }
  
 } 
 void mouseReleased() {
@@ -69,5 +74,5 @@ void mouseReleased() {
 
 void draw() {
   gameStateManager.manage();
-  println(heartContainer.show);
+  //println(heartContainer.show);
 }
