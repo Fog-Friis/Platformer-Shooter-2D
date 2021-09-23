@@ -548,7 +548,7 @@ class GameStateManager {
   
   void setupLevel10() {
     player = new Player(new PVector(width/10, height - 60), 10, 1, 100);
-    checkPoint = new CheckPoint(new PVector(width/2, height/2), 80, 120);
+    checkPoint = new CheckPoint(new PVector(50, 70), 80, 120);
     enemies.clear();
     shooterEnemies.clear();
   }
@@ -556,10 +556,14 @@ class GameStateManager {
   void runLevel10() {
     platforms.clear();
     platforms.add(new Platform(new PVector(width/4+15, height*3/4), width/16, height/2));
-    platforms.add(new Platform(new PVector(width/4+7, height*7/8), width/16+15, height/4));
+    platforms.add(new Platform(new PVector(width/4+15, height*7/8), width/16+31, height/4));
     platforms.add(new Platform(new PVector(width*2/3+15, height*3/4), width/12, height/2));
-    platforms.add(new Platform(new PVector(width*2/3+7, height*7/8), width/12+15, height/4));
-    checkPoint = new CheckPoint(new PVector(width/2, height/2), 80, 120);
+    platforms.add(new Platform(new PVector(width*8/9, height*3/12), width/12, 30));  
+    platforms.add(new Platform(new PVector(width*4/9, height*1/9), width*6/9, 30));
+    platforms.add(new Platform(new PVector(width*1/9, height*1/7+3), 30, 80));
+    platforms.add(new Platform(new PVector(width*1/16-1, height*1/5+16), width*1/8-4, 30));
+    platforms.add(new Platform(new PVector(width*2/3+15, height*7/8), width/12+31, height/4));
+    checkPoint = new CheckPoint(new PVector(50, 70), 80, 120);
     levelPrefab();
     
     //if (enemies.size()==0 && frameCount%360==0) {
@@ -573,8 +577,8 @@ class GameStateManager {
           s.health = 30;
         }
         shooterEnemies.clear();
-        //shooterEnemies.add(new ShooterEnemy(new PVector(width-100, 150), 70, 30, 200, 100));
-        //shooterEnemies.add(new ShooterEnemy(new PVector(100, 150), 70, 30, 200, 100));
+        shooterEnemies.add(new ShooterEnemy(new PVector(width-80, height-60), 70, 30, 200, 100));
+        shooterEnemies.add(new ShooterEnemy(new PVector(width/6, 150), 70, 30, 200, 100));
         nextSpawnTime = frameCount + spawnRate[1];
       }
     }else if (shooterEnemies.size() < 1) {
