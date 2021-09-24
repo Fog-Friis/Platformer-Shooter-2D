@@ -24,6 +24,7 @@ class GameStateManager {
     gameStateManager.setupLevel8();
     gameStateManager.setupLevel9();
     gameStateManager.setupLevel10();
+    gameStateManager.setupLevel11();
   }
 
   void manage() {
@@ -40,7 +41,7 @@ class GameStateManager {
       break;
 
     case 2:
-      runLevel1();
+      runLevel11();
       break;
 
     case 3:
@@ -78,8 +79,12 @@ class GameStateManager {
     case 11:
       runLevel10();
       break;
+
+    case 12:
+      runLevel11();
+      break;      
       
-      case 12:
+      case 13:
       controlScreen();
       break;
 
@@ -556,12 +561,12 @@ class GameStateManager {
   void runLevel10() {
     platforms.clear();
     platforms.add(new Platform(new PVector(width/4+15, height*3/4), width/16, height/2));
-    platforms.add(new Platform(new PVector(width/4+15, height*7/8), width/16+31, height/4));
+    platforms.add(new Platform(new PVector(width/4+15, height*7/8), width/16+31, height/4)); //can't shift and scale the object
     platforms.add(new Platform(new PVector(width*2/3+15, height*3/4), width/12, height/2));
     platforms.add(new Platform(new PVector(width*8/9, height*3/12), width/12, 30));  
     platforms.add(new Platform(new PVector(width*4/9, height*1/9), width*6/9, 30));
     platforms.add(new Platform(new PVector(width*1/9, height*1/7+3), 30, 80));
-    platforms.add(new Platform(new PVector(width*1/16-1, height*1/5+16), width*1/8-4, 30));
+    platforms.add(new Platform(new PVector(width*1/16-1, height*1/5+16), width*1/8-4, 30)); //can't shift and scale the object
     platforms.add(new Platform(new PVector(width*2/3+15, height*7/8), width/12+31, height/4));
     checkPoint = new CheckPoint(new PVector(50, 70), 80, 120);
     levelPrefab();
@@ -579,6 +584,49 @@ class GameStateManager {
         shooterEnemies.clear();
         shooterEnemies.add(new ShooterEnemy(new PVector(width-80, height-60), 70, 30, 200, 100));
         shooterEnemies.add(new ShooterEnemy(new PVector(width/6, 150), 70, 30, 200, 100));
+        nextSpawnTime = frameCount + spawnRate[1];
+      }
+    }else if (shooterEnemies.size() < 1) {
+      shooterEnemies.clear();
+      nextSpawnTime = 0;
+    }
+  }
+  
+  void setupLevel11() {
+    player = new Player(new PVector(width/10, height - 60), 10, 1, 100);
+    checkPoint = new CheckPoint(new PVector(50, 70), 80, 120);
+    enemies.clear();
+    shooterEnemies.clear();
+  }
+  
+  void runLevel11() {
+    platforms.clear();
+    platforms.add(new Platform(new PVector(width*1/10+120*6.2+40, height*3/4-8), 80, 30));
+    platforms.add(new Platform(new PVector(width*1/10+120*6.4+40, height*7/32), 120, 30));
+    platforms.add(new Platform(new PVector(width*29/30+1, height*1/3+80), 80, 30));
+    platforms.add(new Platform(new PVector(width*1/10+120*4.2, height*5/8), 30, height*5/7+40));
+    platforms.add(new Platform(new PVector(width*1/10+120*6.2, height*3/8), 30, height*5/7+40));
+    platforms.add(new Platform(new PVector(width*1/10+120*4, height*1/7+80*1), 80, 30));
+    platforms.add(new Platform(new PVector(width*1/10+120*3, height*1/7+80*2), 80, 30));
+    platforms.add(new Platform(new PVector(width*1/10+120*2, height*1/7+80*3), 80, 30));
+    platforms.add(new Platform(new PVector(width*1/10+120*1, height*1/7+80*4), 80, 30));
+    platforms.add(new Platform(new PVector(40, height*7/8), 80, height/4));
+    checkPoint = new CheckPoint(new PVector(width*1/10+120*6.4+40, height*3/32), 80, 120);
+    levelPrefab();
+    
+    if (enemies.size()==0 && frameCount%360==0) {
+      enemies.clear();
+      enemies.add(new Enemy(new PVector(width*2/3, height*7/8), 100, 4, 50));
+    }
+
+    if (frameCount >= nextSpawnTime) {
+      if (shooterEnemies.size() >= 0 && shooterEnemies.size() <= 2) {
+        for (ShooterEnemy s : shooterEnemies) {
+          s.health = 30;
+        }
+        shooterEnemies.clear();
+        shooterEnemies.add(new ShooterEnemy(new PVector(100, 100), 70, 30, 200, 100));
+        //shooterEnemies.add(new ShooterEnemy(new PVector(width/6, 150), 70, 30, 200, 100));
         nextSpawnTime = frameCount + spawnRate[1];
       }
     }else if (shooterEnemies.size() < 1) {
