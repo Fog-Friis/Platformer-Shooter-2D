@@ -47,8 +47,8 @@ class EnemyHandler {
       }
     }
   }
-
-  void addEnemy() {
+/*
+  void addEnemy() { //Blev brugt til at teste
     if (key == 'p') {
       enemies.add(new Enemy(new PVector(random(200, width-200), random(200, height-200)), 100, 7, 50));
     }
@@ -56,5 +56,5 @@ class EnemyHandler {
     if (key == 'o') {
       shooterEnemies.add(new ShooterEnemy(new PVector(random(200, width - 200), random(200, height - 200)), 70, 30, 300, 300));
     }
-  }
+  }*/
 }
