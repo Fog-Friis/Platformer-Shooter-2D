@@ -45,7 +45,7 @@ void setup() {
 
 void keyPressed() {
   player.keyPress();
-  enemyHandler.addEnemy();
+ // enemyHandler.addEnemy();
 }
 
 void keyReleased() {
