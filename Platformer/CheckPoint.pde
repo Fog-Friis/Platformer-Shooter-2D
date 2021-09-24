@@ -26,7 +26,8 @@ class CheckPoint {
       player.position.y = height - 50;
       gameState += 1;
       //ddddddddddddgameStateManager.nextSpawnTime = 0;
-      heartContainer.show = 255;
+      heartContainer1.show = 255;
+      heartContainer2.show = 255;
     }
   }
 

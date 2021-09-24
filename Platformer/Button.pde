@@ -72,7 +72,8 @@ class Button {
       
     if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.9-sizebutton/7 && mouseY<(height/1.9+sizebutton/3)-sizebutton/7) {
-      heartContainer.show = 255;
+      heartContainer1.show = 255;
+      heartContainer2.show = 255;
       gameState = 3;
       gameStateManager.nextSpawnTime = 0;
     }
@@ -113,8 +114,8 @@ class Button {
     }
     if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.9-sizebutton/7 && mouseY<(height/1.9+sizebutton/3)-sizebutton/7) { 
-
-      heartContainer.show = 255;
+      heartContainer1.show = 255;
+      heartContainer2.show = 255;
       switch(lastLevel) {
 
       case 1:

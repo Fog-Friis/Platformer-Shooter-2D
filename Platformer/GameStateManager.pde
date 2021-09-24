@@ -196,7 +196,7 @@ class GameStateManager {
   void setupLevel1() {
     player = new Player(new PVector(width / 10, height - 60), 10, 1, 100);
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
-    heartContainer = new HeartContainer(new PVector(300, 100), 60);
+    heartContainer1 = new HeartContainer(new PVector(300, 100), 60);
     enemies.clear();
     shooterEnemies.clear();
   }
@@ -208,7 +208,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*3/8, height/4), width*3/4, 30));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
     levelPrefab();
-    heartContainer.run();
+    heartContainer1.run();
     lastLevel = 1;
 
     if (frameCount >= nextSpawnTime) {
@@ -416,7 +416,7 @@ class GameStateManager {
   void setupLevel7() {
     player = new Player(new PVector(width/10, height - 60), 10, 1, 100);
     checkPoint = new CheckPoint(new PVector(width-100, height-100), 80, 120);
-    heartContainer = new HeartContainer(new PVector(550, 550), 60);
+    heartContainer2 = new HeartContainer(new PVector(550, 550), 60);
     enemies.clear();
     shooterEnemies.clear();
   }
@@ -455,7 +455,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*7/16-90, height/2-100), width*2/3-20, 30));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 119);
     levelPrefab();
-    heartContainer.run();
+    heartContainer2.run();
     if (frameCount >= nextSpawnTime) {
       if (shooterEnemies.size() >= 0 && shooterEnemies.size() <= 2) {
         for (ShooterEnemy s : shooterEnemies) {
