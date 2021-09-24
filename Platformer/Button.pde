@@ -67,13 +67,13 @@ class Button {
     }
     if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.25-sizebutton/7 && mouseY<(height/1.25+sizebutton/3)-sizebutton/7) {   
-        gameState = 12;
+        gameState = 2;
     }
       
     if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.9-sizebutton/7 && mouseY<(height/1.9+sizebutton/3)-sizebutton/7) {
       heartContainer.show = 255;
-      gameState = 2;
+      gameState = 3;
       gameStateManager.nextSpawnTime = 0;
     }
     if  (mouseX>width/1.05-sizebutton/1.4 && mouseX<width/1.05+sizebutton-sizebutton/1.4 &&    
@@ -118,15 +118,43 @@ class Button {
       switch(lastLevel) {
 
       case 1:
-        gameState = 2;
-        break;
-
-      case 2:
         gameState = 3;
         break;
 
-      case 3:
+      case 2:
         gameState = 4;
+        break;
+
+      case 3:
+        gameState = 5;
+        break;
+        
+       case 4:
+        gameState = 6;
+        break;
+        
+        case 5:
+        gameState = 7;
+        break;
+        
+        case 6:
+        gameState = 8;
+        break;
+        
+        case 7:
+        gameState = 9;
+        break;
+        
+        case 8:
+        gameState = 10;
+        break;
+        
+        case 9:
+        gameState = 11;
+        break;
+        
+        case 10:
+        gameState = 12;
         break;
       }
     }
