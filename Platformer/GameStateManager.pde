@@ -40,47 +40,47 @@ class GameStateManager {
       break;
 
     case 2:
-      runLevel1();
+      controlScreen();
       break;
 
     case 3:
-      runLevel2();
+      runLevel1();
       break;
 
     case 4:
-      runLevel3();
+      runLevel2();
       break;
 
     case 5:
-      runLevel4();
+      runLevel3();
       break;
 
     case 6:
-      runLevel5();
+      runLevel4();
       break;
 
     case 7:
-      runLevel6();
+      runLevel5();
       break;
 
     case 8:
-      runLevel7();
+      runLevel6();
       break;
 
     case 9:
-      runLevel8();
+      runLevel7();
       break;
 
     case 10:
-      runLevel9();
+      runLevel8();
       break;
 
     case 11:
-      runLevel10();
+      runLevel9();
       break;
       
       case 12:
-      controlScreen();
+      runLevel10();
       break;
 
       default:
@@ -242,6 +242,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*6/8, height / 2), width/8, 30));
     platforms.add(new Platform(new PVector(width*3/16, height/4), width*3/8, 30));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
+    lastLevel = 2;
     levelPrefab();
 
     if (frameCount >= nextSpawnTime) {
@@ -274,6 +275,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*1/16, height/4), width*2/8, 30));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
     levelPrefab();
+    lastLevel = 3;
 
     if (enemies.size()==0 && frameCount%500==0) {
       enemies.clear();
@@ -317,6 +319,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*6/8-10, height/2+15), 20, 30*12));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
     levelPrefab();
+    lastLevel = 4;
 
     if (enemies.size()==0 && frameCount%600==0) {
       enemies.clear();
@@ -363,6 +366,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*25/32-80*5, height*1/3+31*4), 80, 30));
     platforms.add(new Platform(new PVector(width/4+40, height*1/3+31*5), width/2+40*2, 30));
     checkPoint = new CheckPoint(new PVector(100, 100), 80, 120);
+    lastLevel = 5;
     levelPrefab();
 
     if (frameCount >= nextSpawnTime) {
@@ -393,6 +397,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width/2, height*13/16), width/16, height*5/16));
     checkPoint = new CheckPoint(new PVector(width-100, height-100), 80, 120);
     levelPrefab();
+    lastLevel = 6;
 
     if (frameCount >= nextSpawnTime) {
       if (shooterEnemies.size() >= 0 && shooterEnemies.size() <= 2) {
@@ -420,6 +425,7 @@ class GameStateManager {
 
   void runLevel7() {
     platforms.clear();
+    lastLevel = 7;
     platforms.add(new Platform(new PVector(0, height*3/4), width/8, 30));
     platforms.add(new Platform(new PVector(width*2/16-20, height*10/16), 30, 30));
     platforms.add(new Platform(new PVector(width*3/16+30, height*12/16+20), 30, 30));
@@ -484,6 +490,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width/4, height*5/16), width/8, 30));
     checkPoint = new CheckPoint(new PVector(width-100, height-100), 80, 120);
     levelPrefab();
+    lastLevel = 8;
     
     if (enemies.size()==0 && frameCount%360==0) {
       enemies.clear();
@@ -524,6 +531,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width/2, 70), width*3/4, 30));
     checkPoint = new CheckPoint(new PVector(width/2, height/2), 80, 120);
     levelPrefab();
+    lastLevel = 9;
     
     //if (enemies.size()==0 && frameCount%360==0) {
     //  enemies.clear();
@@ -565,6 +573,7 @@ class GameStateManager {
     platforms.add(new Platform(new PVector(width*2/3+15, height*7/8), width/12+31, height/4));
     checkPoint = new CheckPoint(new PVector(50, 70), 80, 120);
     levelPrefab();
+    lastLevel = 10;
     
     //if (enemies.size()==0 && frameCount%360==0) {
     //  enemies.clear();
